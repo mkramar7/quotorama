@@ -11,6 +11,12 @@
 		AD46B38925990C19003C96DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B38825990C19003C96DD /* ContentView.swift */; };
 		AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38A25990C1A003C96DD /* Assets.xcassets */; };
 		AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */; };
+		AD46B39B25990C4A003C96DD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B39A25990C4A003C96DD /* Quote.swift */; };
+		AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */; };
+		ADB325FC2599162E00123C34 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FB2599162E00123C34 /* QuoteView.swift */; };
+		ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FE25991D4500123C34 /* QuotesStore.swift */; };
+		ADB32602259922E300123C34 /* quotes.json in Sources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
+		ADB32605259922F600123C34 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +26,11 @@
 		AD46B38A25990C1A003C96DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD46B38F25990C1A003C96DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD46B39625990C30003C96DD /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
+		AD46B39A25990C4A003C96DD /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
+		ADB325FB2599162E00123C34 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +65,11 @@
 			children = (
 				AD46B38625990C19003C96DD /* QuotoramaApp.swift */,
 				AD46B38825990C19003C96DD /* ContentView.swift */,
+				ADB325FB2599162E00123C34 /* QuoteView.swift */,
+				AD46B39A25990C4A003C96DD /* Quote.swift */,
+				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
+				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
+				AD46B39625990C30003C96DD /* quotes.json */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
 				AD46B38F25990C1A003C96DD /* Info.plist */,
 				AD46B38C25990C1A003C96DD /* Preview Content */,
@@ -126,6 +142,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB32605259922F600123C34 /* quotes.json in Resources */,
 				AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */,
 				AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */,
 			);
@@ -138,6 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADB32602259922E300123C34 /* quotes.json in Sources */,
+				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
+				ADB325FC2599162E00123C34 /* QuoteView.swift in Sources */,
+				AD46B39B25990C4A003C96DD /* Quote.swift in Sources */,
+				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
 				AD46B38925990C19003C96DD /* ContentView.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,
 			);
