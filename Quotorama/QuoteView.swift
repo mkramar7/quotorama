@@ -8,37 +8,65 @@
 import SwiftUI
 
 struct QuoteView: View {
-    let quote: Quote
+    @EnvironmentObject var quotesStore: QuotesStore
+    @State var currentQuote: Quote
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Text(quote.text ?? "")
-                .italic()
-                .font(Font.custom("SavoyeLetPlain", size: 45))
-                .padding(.bottom, 5)
-                
-            HStack {
-                Spacer()
-                
-                Text(quote.author ?? "Unknown author")
-                    .italic()
-                    .font(Font.headline.uppercaseSmallCaps())
-                    .foregroundColor(.secondary)
-                    .padding(.trailing, -5)
-            }
-            .shadow(radius: 0)
-            .onTapGesture {
-                if let _ = quote.author {
-                    guard let url = URL(string: "https://en.wikipedia.org/w/index.php?search=\(quote.authorForUrl)") else { return }
-                    UIApplication.shared.open(url)
+        ZStack {
+            Image("background")
+            VStack {
+                VStack(alignment: .leading) {
+                    Text("„\(currentQuote.text!)“")
+                        .italic()
+                        .font(Font.custom("SavoyeLetPlain", size: 45))
+                        .padding(.bottom, 5)
+                        
+                    HStack {
+                        Spacer()
+                        
+                        Text(currentQuote.author ?? "Unknown author")
+                            .italic()
+                            .font(Font.headline.uppercaseSmallCaps())
+                            .foregroundColor(.secondary)
+                            .padding(.trailing, -5)
+                    }
+                    .shadow(radius: 0)
+                    .onTapGesture {
+                        if let _ = currentQuote.author {
+                            guard let url = URL(string: "\(QuotoramaConstants.wikipediaBaseUrl)\(currentQuote.authorForUrl)") else { return }
+                            UIApplication.shared.open(url)
+                        }
+                    }
                 }
+                .padding(25)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 40)
+                        .stroke(Color.black, lineWidth: 1)
+                )
+                .background(RoundedRectangle(cornerRadius: 40).fill(QuotoramaConstants.yellowishColor))
+                .padding(10)
+                
+                Image(systemName: (currentQuote.isFavorite ?? false) ? "heart.fill" : "heart")
+                    .font(Font.system(size: 60))
+                    .foregroundColor((currentQuote.isFavorite ?? false) ? .red : .black)
+                    .onTapGesture {
+                        withAnimation {
+                            quotesStore.toggleFavorite(currentQuote)
+                        }
+                    }
             }
+            .gesture(DragGesture().onEnded({ value in
+                if value.translation.width < 0 {
+                    loadNextQuote()
+                }
+            }))
+            .layoutPriority(1)
         }
     }
-}
-
-struct QuoteView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuoteView(quote: Quote(author: "Abraham Lincoln", text: "Watch the little things; a small leak will sink a great ship."))
+    
+    func loadNextQuote() {
+        withAnimation(.spring()) {
+            currentQuote = quotesStore.getNextQuote()
+        }
     }
 }

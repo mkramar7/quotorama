@@ -11,6 +11,7 @@ struct Quote: Identifiable, Codable {
     let id = UUID()
     var author: String?
     var text: String?
+    var isFavorite: Bool?
     var authorForUrl: String {
         guard let authorName = author else { return "" }
         return authorName.replacingOccurrences(of: " ", with: "_")

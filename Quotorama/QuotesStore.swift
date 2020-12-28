@@ -8,9 +8,20 @@
 import Foundation
 
 class QuotesStore: ObservableObject {
-    static let quotes: [Quote] = Bundle.main.decode("quotes.json")
+    @Published var quotes: [Quote] = Bundle.main.decode("quotes.json")
     
-    static func getNextQuote() -> Quote {
+    func getNextQuote() -> Quote {
         quotes.shuffled().randomElement() ?? Quote(author: "Unknown author", text: "Unknown quote")
+    }
+    
+    func toggleFavorite(_ quote: Quote) {
+        objectWillChange.send()
+        if var quoteToChange = quotes.first(where: { $0.id == quote.id }) {
+            if let favorited = quoteToChange.isFavorite {
+                quoteToChange.isFavorite = !favorited
+            } else {
+                quoteToChange.isFavorite = true
+            }
+        }
     }
 }
