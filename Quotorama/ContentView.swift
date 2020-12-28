@@ -16,7 +16,7 @@ struct ContentView: View {
     
     var body: some View {
         TabView {
-            QuoteView()
+            QuoteView(currentQuote: quotesStore.getNextQuote())
                 .tabItem {
                     Image(systemName: "quote.bubble")
                     Text("Quote")
@@ -26,14 +26,13 @@ struct ContentView: View {
                     Image(systemName: "heart")
                     Text("Favorites")
                 }
-            QuoteView()
+            QuoteView(currentQuote: quotesStore.getNextQuote())
                 .tabItem {
                     Image(systemName: "bell")
                     Text("Notify")
                 }
         }
         .environmentObject(quotesStore)
-        
     }
 }
 

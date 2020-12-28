@@ -9,18 +9,15 @@ import SwiftUI
 
 struct QuoteView: View {
     @EnvironmentObject var quotesStore: QuotesStore
-    
-    @State private var quoteText = ""
-    @State private var quoteAuthor = ""
-    @State private var isFavorite = false
-    @State private var authorForUrl = ""
+    @State var currentQuote: Quote
     
     var body: some View {
         ZStack {
             Image("background")
+            
             VStack {
                 VStack(alignment: .leading) {
-                    Text("„\(quoteText)“")
+                    Text("„\(currentQuote.text)“")
                         .italic()
                         .font(Font.custom("SavoyeLetPlain", size: 45))
                         .padding(.bottom, 5)
@@ -28,7 +25,7 @@ struct QuoteView: View {
                     HStack {
                         Spacer()
                         
-                        Text(quoteAuthor)
+                        Text(currentQuote.author)
                             .italic()
                             .font(Font.headline.uppercaseSmallCaps())
                             .foregroundColor(.secondary)
@@ -36,7 +33,7 @@ struct QuoteView: View {
                     }
                     .shadow(radius: 0)
                     .onTapGesture {
-                        guard let url = URL(string: "\(QuotoramaConstants.wikipediaBaseUrl)\(authorForUrl)") else { return }
+                        guard let url = URL(string: "\(QuotoramaConstants.wikipediaBaseUrl)\(currentQuote.authorForUrl)") else { return }
                         UIApplication.shared.open(url)
                     }
                 }
@@ -48,13 +45,11 @@ struct QuoteView: View {
                 .background(RoundedRectangle(cornerRadius: 40).fill(QuotoramaConstants.yellowishColor))
                 .padding(10)
                 
-                Image(systemName: isFavorite ? "heart.fill" : "heart")
+                Image(systemName: currentQuote.isFavorite ? "heart.fill" : "heart")
                     .font(Font.system(size: 60))
-                    .foregroundColor(isFavorite ? .red : .black)
+                    .foregroundColor(currentQuote.isFavorite ? .red : .black)
                     .onTapGesture {
-                        withAnimation {
-                            // quotesStore.toggleFavorite(currentQuote)
-                        }
+                        quotesStore.toggleFavorite($currentQuote)
                     }
             }
             .gesture(DragGesture().onEnded({ value in
@@ -64,16 +59,11 @@ struct QuoteView: View {
             }))
             .layoutPriority(1)
         }
-        .onAppear(perform: loadNextQuote)
     }
     
     func loadNextQuote() {
         withAnimation(.spring()) {
-            let quote = quotesStore.getNextQuote()
-            quoteText = quote.text!
-            quoteAuthor = quote.author ?? "Unknown Author"
-            isFavorite = quote.isFavorite ?? false
-            authorForUrl = quote.authorForUrl
+            currentQuote = quotesStore.getNextQuote()
         }
     }
 }

@@ -11,16 +11,19 @@ struct FavoritesView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     
     var body: some View {
-        List {
-            ForEach(quotesStore.quotes.filter({ $0.isFavorite != nil && $0.isFavorite! })) { favoriteQuote in
-                VStack(alignment: .leading) {
-                    Text(favoriteQuote.text!)
-                        .font(.title)
-                    Text(favoriteQuote.author!)
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
+        NavigationView {
+            List {
+                ForEach(quotesStore.quotes.filter({ $0.isFavorite })) { favoriteQuote in
+                    VStack(alignment: .leading) {
+                        Text(favoriteQuote.text)
+                            .font(.subheadline)
+                        Text(favoriteQuote.author)
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
+            .navigationBarTitle("Favorites")
         }
     }
 }
