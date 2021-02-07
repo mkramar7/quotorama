@@ -8,7 +8,7 @@
 import Foundation
 
 struct Quote: Identifiable, Codable {
-    var id: String?
+    var id: String
     var author: String
     var text: String
     var isFavorite: Bool

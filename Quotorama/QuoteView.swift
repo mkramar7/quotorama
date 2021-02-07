@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuoteView: View {
+    @AppStorage("favoriteQuotes") var favoriteQuotes: [String]  = []
+    
     @EnvironmentObject var quotesStore: QuotesStore
     @State var currentQuote: Quote
     
@@ -45,19 +47,21 @@ struct QuoteView: View {
                 .background(RoundedRectangle(cornerRadius: 40).fill(QuotoramaConstants.yellowishColor))
                 .padding(10)
                 
-                Image(systemName: currentQuote.isFavorite ? "heart.fill" : "heart")
+                Image("favorite")
                     .font(Font.system(size: 60))
-                    .foregroundColor(currentQuote.isFavorite ? .red : .black)
+                    .opacity(quotesStore.isFavorite(currentQuote) ? 1 : 0.3)
+                    .scaleEffect(quotesStore.isFavorite(currentQuote) ? 1.5 : 1)
+                    .animation(.easeInOut(duration: 0.2))
                     .onTapGesture {
-                        quotesStore.toggleFavorite($currentQuote)
+                        quotesStore.makeFavorite(currentQuote)
                     }
             }
+            .layoutPriority(1)
             .gesture(DragGesture().onEnded({ value in
                 if value.translation.width < 0 {
                     loadNextQuote()
                 }
             }))
-            .layoutPriority(1)
         }
     }
     
