@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,11 +13,12 @@
 		AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */; };
 		AD46B39B25990C4A003C96DD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B39A25990C4A003C96DD /* Quote.swift */; };
 		AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */; };
+		AD66C6C325D1BEFE00F947A7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD66C6C225D1BEFE00F947A7 /* URLImage */; };
 		AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */; };
 		AD906E7C25D08B5E007435FE /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD906E7B25D08B5E007435FE /* Array+RawRepresentable.swift */; };
+		AD906E7F25D09D79007435FE /* WikipediaImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD906E7E25D09D79007435FE /* WikipediaImageResult.swift */; };
 		ADB325FC2599162E00123C34 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FB2599162E00123C34 /* QuoteView.swift */; };
 		ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FE25991D4500123C34 /* QuotesStore.swift */; };
-		ADB32602259922E300123C34 /* quotes.json in Sources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADB32605259922F600123C34 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD62181259A189F002B5523 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaConstants.swift; sourceTree = "<group>"; };
 		AD906E7B25D08B5E007435FE /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
+		AD906E7E25D09D79007435FE /* WikipediaImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaImageResult.swift; sourceTree = "<group>"; };
 		ADB325FB2599162E00123C34 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADD62181259A189F002B5523 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD66C6C325D1BEFE00F947A7 /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 				AD46B39A25990C4A003C96DD /* Quote.swift */,
 				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
 				AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */,
+				AD906E7E25D09D79007435FE /* WikipediaImageResult.swift */,
 				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
 				AD906E7B25D08B5E007435FE /* Array+RawRepresentable.swift */,
 				AD46B39625990C30003C96DD /* quotes.json */,
@@ -110,6 +114,9 @@
 			dependencies = (
 			);
 			name = Quotorama;
+			packageProductDependencies = (
+				AD66C6C225D1BEFE00F947A7 /* URLImage */,
+			);
 			productName = Quotorama;
 			productReference = AD46B38325990C19003C96DD /* Quotorama.app */;
 			productType = "com.apple.product-type.application";
@@ -137,6 +144,9 @@
 				Base,
 			);
 			mainGroup = AD46B37A25990C19003C96DD;
+			packageReferences = (
+				AD66C6C125D1BEFE00F947A7 /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = AD46B38425990C19003C96DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -164,7 +174,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADB32602259922E300123C34 /* quotes.json in Sources */,
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
 				ADB325FC2599162E00123C34 /* QuoteView.swift in Sources */,
 				AD906E7C25D08B5E007435FE /* Array+RawRepresentable.swift in Sources */,
@@ -173,6 +182,7 @@
 				AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */,
 				AD46B38925990C19003C96DD /* ContentView.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,
+				AD906E7F25D09D79007435FE /* WikipediaImageResult.swift in Sources */,
 				ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +372,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD66C6C125D1BEFE00F947A7 /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD66C6C225D1BEFE00F947A7 /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD66C6C125D1BEFE00F947A7 /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD46B37B25990C19003C96DD /* Project object */;
 }

@@ -11,7 +11,6 @@ struct Quote: Identifiable, Codable {
     var id: String
     var author: String
     var text: String
-    var isFavorite: Bool
     var authorForUrl: String {
         return author.replacingOccurrences(of: " ", with: "_")
     }

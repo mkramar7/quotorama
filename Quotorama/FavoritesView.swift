@@ -18,7 +18,7 @@ struct FavoritesView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(quotesStore.getFavoriteQuotes()) { favoriteQuote in
+                ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
                     VStack(alignment: .leading) {
                         Text(favoriteQuote.text)
                             .font(.body)

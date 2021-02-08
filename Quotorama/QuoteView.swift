@@ -6,18 +6,27 @@
 //
 
 import SwiftUI
+import URLImage
 
 struct QuoteView: View {
-    @AppStorage("favoriteQuotes") var favoriteQuotes: [String]  = []
-    
     @EnvironmentObject var quotesStore: QuotesStore
     @State var currentQuote: Quote
+    
+    @State var authorImageShown = false
+    @State var authorImageUrl = ""
     
     var body: some View {
         ZStack {
             Image("background")
             
             VStack {
+                if (authorImageShown && authorImageUrl != "") {
+                    URLImage(url: URL(string: authorImageUrl)!) { image in
+                        image
+                            .cornerRadius(20)
+                    }
+                }
+                
                 VStack(alignment: .leading) {
                     Text("„\(currentQuote.text)“")
                         .italic()
@@ -53,9 +62,10 @@ struct QuoteView: View {
                     .scaleEffect(quotesStore.isFavorite(currentQuote) ? 1.5 : 1)
                     .animation(.easeInOut(duration: 0.2))
                     .onTapGesture {
-                        quotesStore.makeFavorite(currentQuote)
+                        quotesStore.toggleFavorite(currentQuote)
                     }
             }
+            .onAppear(perform: loadAuthorImage)
             .layoutPriority(1)
             .gesture(DragGesture().onEnded({ value in
                 if value.translation.width < 0 {
@@ -67,7 +77,30 @@ struct QuoteView: View {
     
     func loadNextQuote() {
         withAnimation(.spring()) {
-            currentQuote = quotesStore.getNextQuote()
+            currentQuote = quotesStore.nextQuote
+            loadAuthorImage()
         }
+    }
+    
+    func loadAuthorImage() {
+        let url = URL(string: "\(QuotoramaConstants.wikipediaQuoteAuthorImageBaseUrl)\(currentQuote.authorForUrl)")
+        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+            do {
+                if let quoteAuthorImageData = data {
+                    let decodedImageData = try JSONDecoder().decode(WikipediaImageResult.self, from: quoteAuthorImageData)
+                    DispatchQueue.main.async {
+                        authorImageUrl = decodedImageData.query.pages[0].thumbnail.source
+                        authorImageShown = true
+                    }
+                } else {
+                    print("No image data for this author")
+                    authorImageUrl = ""
+                    authorImageShown = false
+                }
+            } catch {
+                authorImageUrl = ""
+                authorImageShown = false
+            }
+        }.resume()
     }
 }
