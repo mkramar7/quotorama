@@ -7,23 +7,78 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD1021E725D5C2FE002B52CD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60666625D5C24C00276A61 /* Quote.swift */; };
+		AD1021F425D5C372002B52CD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */; };
 		AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B38625990C19003C96DD /* QuotoramaApp.swift */; };
 		AD46B38925990C19003C96DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B38825990C19003C96DD /* ContentView.swift */; };
 		AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38A25990C1A003C96DD /* Assets.xcassets */; };
 		AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */; };
 		AD46B39B25990C4A003C96DD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B39A25990C4A003C96DD /* Quote.swift */; };
 		AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */; };
+		AD60664125D5BBF000276A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60664025D5BBF000276A61 /* Assets.xcassets */; };
+		AD60664825D5BBF100276A61 /* QuotoramaWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD60664D25D5BBF100276A61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60664C25D5BBF100276A61 /* ContentView.swift */; };
+		AD60664F25D5BBF100276A61 /* QuotoramaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */; };
+		AD60665125D5BBF100276A61 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60665025D5BBF100276A61 /* ComplicationController.swift */; };
+		AD60665325D5BBF100276A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60665225D5BBF100276A61 /* Assets.xcassets */; };
+		AD60665625D5BBF100276A61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60665525D5BBF100276A61 /* Preview Assets.xcassets */; };
+		AD60665A25D5BBF100276A61 /* QuotoramaWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD66C6C325D1BEFE00F947A7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = AD66C6C225D1BEFE00F947A7 /* URLImage */; };
 		AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */; };
-		AD906E7C25D08B5E007435FE /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD906E7B25D08B5E007435FE /* Array+RawRepresentable.swift */; };
+		AD82709E25D5C89600F3B8AA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		AD906E7F25D09D79007435FE /* WikipediaImageResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD906E7E25D09D79007435FE /* WikipediaImageResult.swift */; };
+		ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */; };
+		ADA7EB8325D5C59000CAF87C /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */; };
 		ADB325FC2599162E00123C34 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FB2599162E00123C34 /* QuoteView.swift */; };
 		ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FE25991D4500123C34 /* QuotesStore.swift */; };
 		ADB32605259922F600123C34 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD62181259A189F002B5523 /* FavoritesView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		AD60664925D5BBF100276A61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD46B37B25990C19003C96DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD60664625D5BBF100276A61;
+			remoteInfo = "QuotoramaWatch Extension";
+		};
+		AD60665825D5BBF100276A61 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD46B37B25990C19003C96DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD60663D25D5BBEE00276A61;
+			remoteInfo = QuotoramaWatch;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD60665B25D5BBF100276A61 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				AD60665A25D5BBF100276A61 /* QuotoramaWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD60665E25D5BBF100276A61 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AD60664825D5BBF100276A61 /* QuotoramaWatch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AD46B38325990C19003C96DD /* Quotorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46B38625990C19003C96DD /* QuotoramaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaApp.swift; sourceTree = "<group>"; };
 		AD46B38825990C19003C96DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -33,9 +88,21 @@
 		AD46B39625990C30003C96DD /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		AD46B39A25990C4A003C96DD /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
+		AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotoramaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD60664025D5BBF000276A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD60664225D5BBF000276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "QuotoramaWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD60664C25D5BBF100276A61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaApp.swift; sourceTree = "<group>"; };
+		AD60665025D5BBF100276A61 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		AD60665225D5BBF100276A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AD60665525D5BBF100276A61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AD60665725D5BBF100276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD60666625D5C24C00276A61 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quote.swift; path = "QuotoramaWatch Extension/Quote.swift"; sourceTree = SOURCE_ROOT; };
 		AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaConstants.swift; sourceTree = "<group>"; };
-		AD906E7B25D08B5E007435FE /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		AD906E7E25D09D79007435FE /* WikipediaImageResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikipediaImageResult.swift; sourceTree = "<group>"; };
+		ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
+		ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADB325FB2599162E00123C34 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADD62181259A189F002B5523 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
@@ -50,6 +117,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD60664425D5BBF100276A61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				AD46B38525990C19003C96DD /* Quotorama */,
+				AD60663F25D5BBEE00276A61 /* QuotoramaWatch */,
+				AD60664B25D5BBF100276A61 /* QuotoramaWatch Extension */,
 				AD46B38425990C19003C96DD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,6 +141,8 @@
 			isa = PBXGroup;
 			children = (
 				AD46B38325990C19003C96DD /* Quotorama.app */,
+				AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */,
+				AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,8 +159,8 @@
 				AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */,
 				AD906E7E25D09D79007435FE /* WikipediaImageResult.swift */,
 				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
-				AD906E7B25D08B5E007435FE /* Array+RawRepresentable.swift */,
 				AD46B39625990C30003C96DD /* quotes.json */,
+				ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
 				AD46B38F25990C1A003C96DD /* Info.plist */,
 				AD46B38C25990C1A003C96DD /* Preview Content */,
@@ -98,6 +176,39 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AD60663F25D5BBEE00276A61 /* QuotoramaWatch */ = {
+			isa = PBXGroup;
+			children = (
+				AD60664025D5BBF000276A61 /* Assets.xcassets */,
+				AD60664225D5BBF000276A61 /* Info.plist */,
+			);
+			path = QuotoramaWatch;
+			sourceTree = "<group>";
+		};
+		AD60664B25D5BBF100276A61 /* QuotoramaWatch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AD60664C25D5BBF100276A61 /* ContentView.swift */,
+				AD60666625D5C24C00276A61 /* Quote.swift */,
+				AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */,
+				ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */,
+				AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */,
+				AD60665025D5BBF100276A61 /* ComplicationController.swift */,
+				AD60665225D5BBF100276A61 /* Assets.xcassets */,
+				AD60665725D5BBF100276A61 /* Info.plist */,
+				AD60665425D5BBF100276A61 /* Preview Content */,
+			);
+			path = "QuotoramaWatch Extension";
+			sourceTree = "<group>";
+		};
+		AD60665425D5BBF100276A61 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AD60665525D5BBF100276A61 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -108,10 +219,12 @@
 				AD46B37F25990C19003C96DD /* Sources */,
 				AD46B38025990C19003C96DD /* Frameworks */,
 				AD46B38125990C19003C96DD /* Resources */,
+				AD60665B25D5BBF100276A61 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AD60665925D5BBF100276A61 /* PBXTargetDependency */,
 			);
 			name = Quotorama;
 			packageProductDependencies = (
@@ -121,17 +234,57 @@
 			productReference = AD46B38325990C19003C96DD /* Quotorama.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AD60663D25D5BBEE00276A61 /* QuotoramaWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD60666225D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch" */;
+			buildPhases = (
+				AD60663C25D5BBEE00276A61 /* Resources */,
+				AD60665E25D5BBF100276A61 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD60664A25D5BBF100276A61 /* PBXTargetDependency */,
+			);
+			name = QuotoramaWatch;
+			productName = QuotoramaWatch;
+			productReference = AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		AD60664625D5BBF100276A61 /* QuotoramaWatch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD60666125D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch Extension" */;
+			buildPhases = (
+				AD60664325D5BBF100276A61 /* Sources */,
+				AD60664425D5BBF100276A61 /* Frameworks */,
+				AD60664525D5BBF100276A61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "QuotoramaWatch Extension";
+			productName = "QuotoramaWatch Extension";
+			productReference = AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AD46B37B25990C19003C96DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1230;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1230;
 				TargetAttributes = {
 					AD46B38225990C19003C96DD = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					AD60663D25D5BBEE00276A61 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					AD60664625D5BBF100276A61 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -152,6 +305,8 @@
 			projectRoot = "";
 			targets = (
 				AD46B38225990C19003C96DD /* Quotorama */,
+				AD60663D25D5BBEE00276A61 /* QuotoramaWatch */,
+				AD60664625D5BBF100276A61 /* QuotoramaWatch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -167,6 +322,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD60663C25D5BBEE00276A61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD60664125D5BBF000276A61 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD60664525D5BBF100276A61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD82709E25D5C89600F3B8AA /* quotes.json in Resources */,
+				AD60665625D5BBF100276A61 /* Preview Assets.xcassets in Resources */,
+				AD60665325D5BBF100276A61 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -176,8 +349,8 @@
 			files = (
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
 				ADB325FC2599162E00123C34 /* QuoteView.swift in Sources */,
-				AD906E7C25D08B5E007435FE /* Array+RawRepresentable.swift in Sources */,
 				AD46B39B25990C4A003C96DD /* Quote.swift in Sources */,
+				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
 				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
 				AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */,
 				AD46B38925990C19003C96DD /* ContentView.swift in Sources */,
@@ -187,7 +360,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD60664325D5BBF100276A61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD1021E725D5C2FE002B52CD /* Quote.swift in Sources */,
+				AD1021F425D5C372002B52CD /* Bundle+Decodable.swift in Sources */,
+				ADA7EB8325D5C59000CAF87C /* QuotesStore.swift in Sources */,
+				AD60664D25D5BBF100276A61 /* ContentView.swift in Sources */,
+				AD60664F25D5BBF100276A61 /* QuotoramaApp.swift in Sources */,
+				AD60665125D5BBF100276A61 /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD60664A25D5BBF100276A61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD60664625D5BBF100276A61 /* QuotoramaWatch Extension */;
+			targetProxy = AD60664925D5BBF100276A61 /* PBXContainerItemProxy */;
+		};
+		AD60665925D5BBF100276A61 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD60663D25D5BBEE00276A61 /* QuotoramaWatch */;
+			targetProxy = AD60665825D5BBF100276A61 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		AD46B39025990C1A003C96DD /* Debug */ = {
@@ -350,6 +549,94 @@
 			};
 			name = Release;
 		};
+		AD60665C25D5BBF100276A61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6Z6GBS4J9;
+				IBSC_MODULE = QuotoramaWatch_Extension;
+				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		AD60665D25D5BBF100276A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D6Z6GBS4J9;
+				IBSC_MODULE = QuotoramaWatch_Extension;
+				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
+		AD60665F25D5BBF100276A61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"QuotoramaWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = D6Z6GBS4J9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "QuotoramaWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Debug;
+		};
+		AD60666025D5BBF100276A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"QuotoramaWatch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = D6Z6GBS4J9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "QuotoramaWatch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -367,6 +654,24 @@
 			buildConfigurations = (
 				AD46B39325990C1A003C96DD /* Debug */,
 				AD46B39425990C1A003C96DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD60666125D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD60665F25D5BBF100276A61 /* Debug */,
+				AD60666025D5BBF100276A61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD60666225D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD60665C25D5BBF100276A61 /* Debug */,
+				AD60665D25D5BBF100276A61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
