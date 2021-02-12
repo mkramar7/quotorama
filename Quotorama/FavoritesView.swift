@@ -10,11 +10,6 @@ import SwiftUI
 struct FavoritesView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     
-    init() {
-        UITableView.appearance().backgroundColor = .clear // For tableView
-        UITableViewCell.appearance().backgroundColor = .clear // For tableViewCell
-    }
-    
     var body: some View {
         NavigationView {
             List {
@@ -33,11 +28,9 @@ struct FavoritesView: View {
                                 .italic()
                         }
                     }
-                    .listRowBackground(Color.black.opacity(0.1))
                 }
                 .onDelete(perform: quotesStore.removeFavorites)
             }
-            .background(Image("background"))
             .navigationBarTitle("Favorites")
         }
     }

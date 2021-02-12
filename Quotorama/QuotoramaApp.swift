@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct QuotoramaApp: App {
+    var quotesStore = QuotesStore()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(currentQuote: quotesStore.nextQuote)
+                .environmentObject(quotesStore)
         }
     }
 }

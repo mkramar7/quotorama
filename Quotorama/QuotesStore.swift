@@ -38,3 +38,12 @@ class QuotesStore: ObservableObject {
         favoriteQuoteIds.removeAll(where: { quoteIdsToRemoveFromFavorites.contains($0) })
     }
 }
+
+struct Quote: Identifiable, Codable, Hashable {
+    var id: String
+    var author: String
+    var text: String
+    var authorForUrl: String {
+        return author.replacingOccurrences(of: " ", with: "_")
+    }
+}
