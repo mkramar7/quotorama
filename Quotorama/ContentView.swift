@@ -12,7 +12,9 @@ struct ContentView: View {
     @State var currentQuote: Quote
     
     @State private var quoteShown = true
-    @State private var favoritesViewShown = false;
+    @State private var favoritesViewShown = false
+    
+    private var idiom : UIUserInterfaceIdiom { UIDevice.current.userInterfaceIdiom }
     
     var body: some View {
         VStack {
@@ -62,7 +64,9 @@ struct ContentView: View {
                             UIApplication.shared.open(url)
                         }
                     }
-                    .padding(35)
+                    .padding([.top, .bottom], 35)
+                    .padding(.leading, idiom == .pad ? 100 : 35)
+                    .padding(.trailing, idiom == .pad ? 100 : 35)
                     
                     Image(systemName: quotesStore.isFavorite(currentQuote) ? "heart.fill" : "heart")
                         .font(Font.system(size: 40))
