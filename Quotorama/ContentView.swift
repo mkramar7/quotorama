@@ -17,20 +17,26 @@ struct ContentView: View {
     var body: some View {
         VStack {
             HStack {
+                QuotoramaButton(text: "Favorites", icon: "heart.fill") {
+                    favoritesViewShown = true
+                }
+                .padding(.top, 20)
+                .padding(.leading, 20)
+                .sheet(isPresented: $favoritesViewShown) {
+                    FavoritesView()
+                        .preferredColorScheme(.dark)
+                        .environmentObject(quotesStore)
+                }
+                
                 Spacer()
                 
-                Button(action: {
-                    favoritesViewShown = true
-                }) {
-                    Image(systemName: "person")
-                        .font(.title)
+                QuotoramaButton(text: "Share", icon: "square.and.arrow.up") {
+                    let data = "„\(currentQuote.text)“ by \(currentQuote.author)"
+                    let shareView = UIActivityViewController(activityItems: [data], applicationActivities: nil)
+                    UIApplication.shared.windows.first?.rootViewController?.present(shareView, animated: true, completion: nil)
                 }
                 .padding(.top, 20)
                 .padding(.trailing, 20)
-                .sheet(isPresented: $favoritesViewShown) {
-                    FavoritesView()
-                        .environmentObject(quotesStore)
-                }
             }
             
             Spacer()
@@ -40,7 +46,6 @@ struct ContentView: View {
                     VStack(alignment: .leading) {
                         Text("„\(currentQuote.text)“")
                             .italic()
-                            .opacity(0.8)
                             .font(Font.custom("Baskerville", size: 35))
                             .padding(.bottom, 10)
                             
@@ -49,7 +54,6 @@ struct ContentView: View {
                             
                             Text(currentQuote.author)
                                 .italic()
-                                .opacity(0.8)
                                 .font(Font.custom("Baskerville", size: 25))
                                 .padding(.trailing, -5)
                         }
@@ -96,5 +100,28 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(currentQuote: quotesStore.nextQuote)
             .environmentObject(quotesStore)
+    }
+}
+
+struct QuotoramaButton: View {
+    var text: String
+    var icon: String
+    var action: () -> ()
+    
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                Image(systemName: icon)
+                    .font(Font.custom("Baskerville", size: 15))
+                    .foregroundColor(.white)
+                
+                Text(text)
+                    .foregroundColor(.white)
+            }
+            .padding(10)
+            .background(Color.gray.opacity(0.15))
+            .cornerRadius(10)
+            
+        }
     }
 }

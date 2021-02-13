@@ -16,22 +16,21 @@ struct FavoritesView: View {
                 ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
                     VStack(alignment: .leading) {
                         Text(favoriteQuote.text)
-                            .font(.body)
                             .padding(.bottom, 5)
                         
                         HStack {
                             Spacer()
                             
                             Text(favoriteQuote.author)
-                                .font(.footnote)
                                 .foregroundColor(.secondary)
                                 .italic()
                         }
                     }
+                    .frame(minHeight: 100)
                 }
                 .onDelete(perform: quotesStore.removeFavorites)
             }
-            .navigationBarTitle("Favorites")
+            .navigationBarTitle("Favorite quotes")
         }
     }
 }
