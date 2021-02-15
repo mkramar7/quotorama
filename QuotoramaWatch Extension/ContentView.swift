@@ -41,9 +41,3 @@ struct ContentView: View {
         currentQuote = quotesStore.nextQuote
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView(currentQuote: QuotesStore().nextQuote)
-    }
-}
