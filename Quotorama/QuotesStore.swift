@@ -43,7 +43,7 @@ struct Quote: Identifiable, Codable, Hashable {
     var id: String
     var author: String
     var text: String
-    var authorForUrl: String {
+    var authorNameNormalized: String {
         return author.replacingOccurrences(of: " ", with: "_")
     }
 }

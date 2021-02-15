@@ -21,6 +21,8 @@
 		AD60665325D5BBF100276A61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60665225D5BBF100276A61 /* Assets.xcassets */; };
 		AD60665625D5BBF100276A61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60665525D5BBF100276A61 /* Preview Assets.xcassets */; };
 		AD60665A25D5BBF100276A61 /* QuotoramaWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD67CA8525DB1563001FF2E4 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA8425DB1563001FF2E4 /* QuoteView.swift */; };
+		AD67CA8D25DB1593001FF2E4 /* QuotoramaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */; };
 		AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */; };
 		AD82709E25D5C89600F3B8AA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */; };
@@ -93,6 +95,8 @@
 		AD60665525D5BBF100276A61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD60665725D5BBF100276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD60666625D5C24C00276A61 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quote.swift; path = "QuotoramaWatch Extension/Quote.swift"; sourceTree = SOURCE_ROOT; };
+		AD67CA8425DB1563001FF2E4 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
+		AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaButtonView.swift; sourceTree = "<group>"; };
 		AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaConstants.swift; sourceTree = "<group>"; };
 		ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
@@ -144,9 +148,9 @@
 			children = (
 				AD46B38625990C19003C96DD /* QuotoramaApp.swift */,
 				ADB325FB2599162E00123C34 /* ContentView.swift */,
-				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
 				AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */,
+				AD67CA8325DB1553001FF2E4 /* Views */,
 				ADBD6F7725D6D32E003B2EFD /* Extensions */,
 				AD46B39625990C30003C96DD /* quotes.json */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
@@ -195,6 +199,16 @@
 				AD60665525D5BBF100276A61 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AD67CA8325DB1553001FF2E4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ADD62181259A189F002B5523 /* FavoritesView.swift */,
+				AD67CA8425DB1563001FF2E4 /* QuoteView.swift */,
+				AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		ADBD6F7725D6D32E003B2EFD /* Extensions */ = {
@@ -344,7 +358,9 @@
 			files = (
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
 				ADB325FC2599162E00123C34 /* ContentView.swift in Sources */,
+				AD67CA8D25DB1593001FF2E4 /* QuotoramaButtonView.swift in Sources */,
 				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
+				AD67CA8525DB1563001FF2E4 /* QuoteView.swift in Sources */,
 				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
 				AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,
