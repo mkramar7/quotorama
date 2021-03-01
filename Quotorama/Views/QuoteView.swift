@@ -13,6 +13,8 @@ struct QuoteView: View {
     @Binding var currentQuote: Quote
     @State private var quoteShown = true
     
+    let nextQuoteShownHandler: () -> ()
+    
     var body: some View {
         if quoteShown {
             VStack {
@@ -54,6 +56,7 @@ struct QuoteView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                         currentQuote = quotesStore.nextQuote
                         quoteShown.toggle()
+                        nextQuoteShownHandler()
                     }
                 }
             }))

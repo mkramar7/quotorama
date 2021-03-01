@@ -6,10 +6,14 @@
 //
 
 import SwiftUI
+import GoogleMobileAds
 
 struct ContentView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @State var currentQuote: Quote
+    
+    @State private var interstitialAd: GADInterstitialAd!
+    @State private var interstitialCounter = 0
     
     var body: some View {
         VStack {
@@ -18,10 +22,41 @@ struct ContentView: View {
             
             Spacer()
             
-            QuoteView(currentQuote: $currentQuote)
+            QuoteView(currentQuote: $currentQuote, nextQuoteShownHandler: onNextQuoteShown)
                 .environmentObject(quotesStore)
             
             Spacer()
+        }
+        .onAppear(perform: loadGoogleInterstitialAd)
+    }
+    
+    func onNextQuoteShown() {
+        interstitialCounter += 1
+        if (interstitialCounter == 7) {
+            showGoogleInterstitialAd()
+            interstitialCounter = 0
+        }
+    }
+    
+    func showGoogleInterstitialAd() {
+        self.interstitialAd.present(fromRootViewController: (UIApplication.shared.windows.first?.rootViewController)!)
+    }
+    
+    func loadGoogleInterstitialAd() {
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID: "ca-app-pub-2246687869317180/5429182192", request: request) { [self] ad, error in
+            if let error = error {
+              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+              return
+            }
+
+            self.interstitialAd = ad
+            let randomNumber = Int.random(in: 0...100)
+            if randomNumber % 4 == 0 {
+                showGoogleInterstitialAd()
+            }
         }
     }
 }
