@@ -33,6 +33,7 @@
 		AD67CAB825DB1B3C001FF2E4 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */; };
 		AD67CAB925DB1B3C001FF2E4 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB625DB1B3C001FF2E4 /* Quote.swift */; };
 		AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */; };
+		AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */; };
 		AD82709E25D5C89600F3B8AA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		AD9130D825ED585000AFF02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60664025D5BBF000276A61 /* Assets.xcassets */; };
 		AD9130DD25ED587B00AFF02C /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
@@ -146,6 +147,7 @@
 		AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AD67CAB625DB1B3C001FF2E4 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaConstants.swift; sourceTree = "<group>"; };
+		AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaUtil.swift; sourceTree = "<group>"; };
 		ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADB325FB2599162E00123C34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -218,11 +220,10 @@
 			isa = PBXGroup;
 			children = (
 				AD46B38625990C19003C96DD /* QuotoramaApp.swift */,
-				ADB325FB2599162E00123C34 /* ContentView.swift */,
 				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
 				AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */,
 				AD67CA8325DB1553001FF2E4 /* Views */,
-				ADBD6F7725D6D32E003B2EFD /* Extensions */,
+				ADBD6F7725D6D32E003B2EFD /* Extensions and utilities */,
 				AD46B39625990C30003C96DD /* quotes.json */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
 				AD46B38F25990C1A003C96DD /* Info.plist */,
@@ -275,6 +276,7 @@
 		AD67CA8325DB1553001FF2E4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ADB325FB2599162E00123C34 /* ContentView.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				AD67CA8425DB1563001FF2E4 /* QuoteView.swift */,
 				AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */,
@@ -305,13 +307,14 @@
 			path = QuotoramaWidget;
 			sourceTree = "<group>";
 		};
-		ADBD6F7725D6D32E003B2EFD /* Extensions */ = {
+		ADBD6F7725D6D32E003B2EFD /* Extensions and utilities */ = {
 			isa = PBXGroup;
 			children = (
 				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
 				ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */,
+				AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */,
 			);
-			path = Extensions;
+			path = "Extensions and utilities";
 			sourceTree = "<group>";
 		};
 		B00134A0FB3A207114B7BA6D /* Pods */ = {
@@ -535,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
+				AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */,
 				ADB325FC2599162E00123C34 /* ContentView.swift in Sources */,
 				AD67CA8D25DB1593001FF2E4 /* QuotoramaButtonView.swift in Sources */,
 				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
