@@ -41,6 +41,7 @@ struct ContentView: View {
 struct HeaderView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @State private var favoritesViewShown = false
+    @State private var shareSheetViewShown = false
     
     var currentQuote: Quote
     
@@ -57,15 +58,12 @@ struct HeaderView: View {
             
             Spacer()
             
-            QuotoramaButtonView(text: "Share", icon: "square.and.arrow.up", action: shareQuote)
+            QuotoramaButtonView(text: "Share", icon: "square.and.arrow.up", action: { self.shareSheetViewShown.toggle() })
                 .padding(.top, 20)
                 .padding(.trailing, 20)
         }
-    }
-    
-    func shareQuote() {
-        let data = "„\(currentQuote.text)“ by \(currentQuote.author)"
-        let shareView = UIActivityViewController(activityItems: [data], applicationActivities: nil)
-        UIApplication.shared.windows.first?.rootViewController?.present(shareView, animated: true, completion: nil)
+        .sheet(isPresented: $shareSheetViewShown) {
+            ShareSheetView(activityItems: ["„\(currentQuote.text)“ by \(currentQuote.author)"])
+        }
     }
 }
