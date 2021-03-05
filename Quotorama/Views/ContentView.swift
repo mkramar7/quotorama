@@ -61,9 +61,10 @@ struct HeaderView: View {
             QuotoramaButtonView(text: "Share", icon: "square.and.arrow.up", action: { self.shareSheetViewShown.toggle() })
                 .padding(.top, 20)
                 .padding(.trailing, 20)
-        }
-        .sheet(isPresented: $shareSheetViewShown) {
-            ShareSheetView(activityItems: ["„\(currentQuote.text)“ by \(currentQuote.author)"])
+                .sheet(isPresented: $shareSheetViewShown) {
+                    ShareSheetView(activityItems: ["„\(currentQuote.text)“ by \(currentQuote.author)"])
+                        .preferredColorScheme(.dark)
+                }
         }
     }
 }
