@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavoritesView: View {
     @EnvironmentObject var quotesStore: QuotesStore
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView {
@@ -31,6 +32,9 @@ struct FavoritesView: View {
                 .onDelete(perform: quotesStore.removeFavorites)
             }
             .navigationBarTitle("Favorite quotes")
+            .navigationBarItems(trailing: Button("Done") {
+                presentationMode.wrappedValue.dismiss()
+            })
         }
     }
 }
