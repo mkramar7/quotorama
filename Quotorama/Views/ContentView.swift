@@ -31,7 +31,7 @@ struct ContentView: View {
     
     func onNextQuoteShown() {
         interstitialCounter += 1
-        if (interstitialCounter == 7) {
+        if (interstitialCounter == 12) {
             QuotoramaUtil.showGoogleInterstitialAd()
             interstitialCounter = 0
         }

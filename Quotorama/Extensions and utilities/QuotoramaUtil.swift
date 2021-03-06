@@ -29,10 +29,6 @@ class QuotoramaUtil {
             }
 
             interstitialAd = ad
-            let randomNumber = Int.random(in: 0...100)
-            if randomNumber % 4 == 0 {
-                showGoogleInterstitialAd()
-            }
         }
     }
     
