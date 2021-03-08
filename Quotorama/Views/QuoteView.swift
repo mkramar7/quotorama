@@ -36,8 +36,7 @@ struct QuoteView: View {
                     }
                 }
                 .padding([.top, .bottom], 35)
-                .padding(.leading, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 35)
-                .padding(.trailing, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 35)
+                .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 35)
                 
                 Image(systemName: quotesStore.isFavorite(currentQuote) ? "heart.fill" : "heart")
                     .font(Font.system(size: 40))
@@ -46,8 +45,11 @@ struct QuoteView: View {
                         quotesStore.toggleFavorite(currentQuote)
                     }
             }
+            .frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/)
             .transition(AnyTransition.asymmetric(insertion: AnyTransition.move(edge: .trailing), removal: AnyTransition.move(edge: .leading)))
             .animation(.default)
+            .padding(.bottom, 50)
+            .contentShape(Rectangle())
             .gesture(DragGesture().onEnded({ value in
                 if value.translation.width < 0 {
                     quoteShown.toggle()
@@ -63,7 +65,6 @@ struct QuoteView: View {
                     }
                 }
             }))
-            .padding(.bottom, 50)
         }
     }
     
