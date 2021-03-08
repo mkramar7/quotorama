@@ -19,6 +19,7 @@ struct QuoteView: View {
             VStack {
                 VStack(alignment: .leading) {
                     Text("„\(currentQuote.text)“")
+                        .italic()
                         .font(quoteFont(30))
                         .padding(.bottom, 10)
                         
@@ -69,7 +70,7 @@ struct QuoteView: View {
     }
     
     func quoteFont(_ size: CGFloat) -> Font {
-        Font.custom("Avenir", size: size)
+        Font.custom("Baskerville", size: size)
     }
 }
 
