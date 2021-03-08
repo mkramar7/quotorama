@@ -19,8 +19,7 @@ struct QuoteView: View {
             VStack {
                 VStack(alignment: .leading) {
                     Text("„\(currentQuote.text)“")
-                        .italic()
-                        .font(Font.custom("Baskerville", size: 35))
+                        .font(quoteFont(30))
                         .padding(.bottom, 10)
                         
                     HStack {
@@ -28,7 +27,7 @@ struct QuoteView: View {
                         
                         Text(currentQuote.author)
                             .italic()
-                            .font(Font.custom("Baskerville", size: 25))
+                            .font(quoteFont(25))
                             .padding(.trailing, -5)
                     }
                     .onTapGesture {
@@ -67,4 +66,16 @@ struct QuoteView: View {
             .padding(.bottom, 50)
         }
     }
+    
+    func quoteFont(_ size: CGFloat) -> Font {
+        Font.custom("Avenir", size: size)
+    }
 }
+
+struct QuoteView_Previews: PreviewProvider {
+    static var previews: some View {
+        QuoteView(currentQuote: .constant(QuotesStore().nextQuote))
+            .environmentObject(QuotesStore())
+    }
+}
+
