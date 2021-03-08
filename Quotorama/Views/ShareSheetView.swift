@@ -21,6 +21,7 @@ struct ShareSheetView: UIViewControllerRepresentable {
             applicationActivities: applicationActivities)
         controller.excludedActivityTypes = excludedActivityTypes
         controller.completionWithItemsHandler = callback
+        controller.overrideUserInterfaceStyle = .dark
         return controller
     }
     

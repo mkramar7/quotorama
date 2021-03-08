@@ -10,61 +10,36 @@ import GoogleMobileAds
 
 struct ContentView: View {
     @EnvironmentObject var quotesStore: QuotesStore
-    @State var currentQuote: Quote
     
-    @State private var interstitialCounter = 0
+    @State var currentQuote: Quote
+    @State private var favoritesViewShown = false
+    @State private var shareSheetViewShown = false
     
     var body: some View {
         VStack {
-            HeaderView(currentQuote: currentQuote)
-                .environmentObject(quotesStore)
+            HStack {
+                ActionButtonView(text: "Favorites", icon: "heart.fill", action: { favoritesViewShown.toggle() })
+                    .padding([.top, .leading], 20)
+                    .sheet(isPresented: $favoritesViewShown) {
+                        FavoritesView().environmentObject(quotesStore)
+                    }
+                
+                Spacer()
+                
+                ActionButtonView(text: "Share", icon: "square.and.arrow.up", action: { shareSheetViewShown.toggle() })
+                    .padding([.top, .trailing], 20)
+                    .sheet(isPresented: $shareSheetViewShown) {
+                        ShareSheetView(activityItems: ["„\(currentQuote.text)“ by \(currentQuote.author)"])
+                    }
+            }
             
             Spacer()
             
-            QuoteView(currentQuote: $currentQuote, nextQuoteShownHandler: onNextQuoteShown)
+            QuoteView(currentQuote: $currentQuote)
                 .environmentObject(quotesStore)
             
             Spacer()
         }
         .onAppear(perform: QuotoramaUtil.loadGoogleInterstitialAd)
-    }
-    
-    func onNextQuoteShown() {
-        interstitialCounter += 1
-        if (interstitialCounter == 12) {
-            QuotoramaUtil.showGoogleInterstitialAd()
-            interstitialCounter = 0
-        }
-    }
-}
-
-struct HeaderView: View {
-    @EnvironmentObject var quotesStore: QuotesStore
-    @State private var favoritesViewShown = false
-    @State private var shareSheetViewShown = false
-    
-    var currentQuote: Quote
-    
-    var body: some View {
-        HStack {
-            QuotoramaButtonView(text: "Favorites", icon: "heart.fill", action: { favoritesViewShown = true })
-                .padding(.top, 20)
-                .padding(.leading, 20)
-                .sheet(isPresented: $favoritesViewShown) {
-                    FavoritesView()
-                        .preferredColorScheme(.dark)
-                        .environmentObject(quotesStore)
-                }
-            
-            Spacer()
-            
-            QuotoramaButtonView(text: "Share", icon: "square.and.arrow.up", action: { self.shareSheetViewShown.toggle() })
-                .padding(.top, 20)
-                .padding(.trailing, 20)
-                .sheet(isPresented: $shareSheetViewShown) {
-                    ShareSheetView(activityItems: ["„\(currentQuote.text)“ by \(currentQuote.author)"])
-                        .preferredColorScheme(.dark)
-                }
-        }
     }
 }

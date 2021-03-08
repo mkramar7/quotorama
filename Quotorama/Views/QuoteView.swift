@@ -12,8 +12,7 @@ struct QuoteView: View {
     
     @Binding var currentQuote: Quote
     @State private var quoteShown = true
-    
-    let nextQuoteShownHandler: () -> ()
+    @State private var interstitialCounter = 0
     
     var body: some View {
         if quoteShown {
@@ -56,7 +55,12 @@ struct QuoteView: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
                         currentQuote = quotesStore.nextQuote
                         quoteShown.toggle()
-                        nextQuoteShownHandler()
+                        
+                        interstitialCounter += 1
+                        if (interstitialCounter == 12) {
+                            QuotoramaUtil.showGoogleInterstitialAd()
+                            interstitialCounter = 0
+                        }
                     }
                 }
             }))

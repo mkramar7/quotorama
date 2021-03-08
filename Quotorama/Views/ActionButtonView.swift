@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct QuotoramaButtonView: View {
+struct ActionButtonView: View {
     var text: String
     var icon: String
     var action: () -> ()

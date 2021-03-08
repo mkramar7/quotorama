@@ -22,7 +22,7 @@ class QuotoramaUtil {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: REAL_GOOGLE_INTERSTITIAL_AD_UNIT_ID, request: request) { [self] ad, error in
+        GADInterstitialAd.load(withAdUnitID: SAMPLE_GOOGLE_INTERSTITIAL_AD_UNIT_ID, request: request) { [self] ad, error in
             if let error = error {
               print("Failed to load interstitial ad with error: \(error.localizedDescription)")
               return

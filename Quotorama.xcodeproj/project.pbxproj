@@ -22,7 +22,7 @@
 		AD60665625D5BBF100276A61 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60665525D5BBF100276A61 /* Preview Assets.xcassets */; };
 		AD60665A25D5BBF100276A61 /* QuotoramaWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD67CA8525DB1563001FF2E4 /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA8425DB1563001FF2E4 /* QuoteView.swift */; };
-		AD67CA8D25DB1593001FF2E4 /* QuotoramaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */; };
+		AD67CA8D25DB1593001FF2E4 /* ActionButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */; };
 		AD67CA9B25DB194A001FF2E4 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD67CA9A25DB194A001FF2E4 /* WidgetKit.framework */; };
 		AD67CA9D25DB194A001FF2E4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD67CA9C25DB194A001FF2E4 /* SwiftUI.framework */; };
 		AD67CAA025DB194A001FF2E4 /* QuotoramaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA9F25DB194A001FF2E4 /* QuotoramaWidget.swift */; };
@@ -137,7 +137,7 @@
 		AD60665725D5BBF100276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD60666625D5C24C00276A61 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quote.swift; path = "QuotoramaWatch Extension/Quote.swift"; sourceTree = SOURCE_ROOT; };
 		AD67CA8425DB1563001FF2E4 /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
-		AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaButtonView.swift; sourceTree = "<group>"; };
+		AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
 		AD67CA9825DB194A001FF2E4 /* QuotoramaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuotoramaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD67CA9A25DB194A001FF2E4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		AD67CA9C25DB194A001FF2E4 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
@@ -280,9 +280,9 @@
 			children = (
 				ADB325FB2599162E00123C34 /* ContentView.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
-				AD67CA8425DB1563001FF2E4 /* QuoteView.swift */,
-				AD67CA8C25DB1593001FF2E4 /* QuotoramaButtonView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
+				AD67CA8425DB1563001FF2E4 /* QuoteView.swift */,
+				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -543,7 +543,7 @@
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
 				AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */,
 				ADB325FC2599162E00123C34 /* ContentView.swift in Sources */,
-				AD67CA8D25DB1593001FF2E4 /* QuotoramaButtonView.swift in Sources */,
+				AD67CA8D25DB1593001FF2E4 /* ActionButtonView.swift in Sources */,
 				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
 				AD67CA8525DB1563001FF2E4 /* QuoteView.swift in Sources */,
 				AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */,

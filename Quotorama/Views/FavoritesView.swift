@@ -36,5 +36,6 @@ struct FavoritesView: View {
                 presentationMode.wrappedValue.dismiss()
             })
         }
+        .preferredColorScheme(.dark)
     }
 }
