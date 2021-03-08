@@ -32,6 +32,7 @@
 		AD67CAB725DB1B3C001FF2E4 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB425DB1B3C001FF2E4 /* QuotesStore.swift */; };
 		AD67CAB825DB1B3C001FF2E4 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */; };
 		AD67CAB925DB1B3C001FF2E4 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB625DB1B3C001FF2E4 /* Quote.swift */; };
+		AD6EAAA425F689150044F941 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6EAAA325F689150044F941 /* ContentView2.swift */; };
 		AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */; };
 		AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */; };
 		AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */; };
@@ -147,6 +148,7 @@
 		AD67CAB425DB1B3C001FF2E4 /* QuotesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
 		AD67CAB625DB1B3C001FF2E4 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		AD6EAAA325F689150044F941 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaConstants.swift; sourceTree = "<group>"; };
 		AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaUtil.swift; sourceTree = "<group>"; };
 		AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB325FB2599162E00123C34 /* ContentView.swift */,
+				AD6EAAA325F689150044F941 /* ContentView2.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
 				AD67CA8425DB1563001FF2E4 /* QuoteView.swift */,
@@ -549,6 +552,7 @@
 				AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */,
 				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
 				AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */,
+				AD6EAAA425F689150044F941 /* ContentView2.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,
 				ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */,
 			);

@@ -16,6 +16,10 @@ struct QuotoramaApp: App {
             ContentView(currentQuote: quotesStore.nextQuote)
                 .preferredColorScheme(.dark)
                 .environmentObject(quotesStore)
+            
+            /*ContentView2()
+                .preferredColorScheme(.dark)
+                .environmentObject(quotesStore)*/
         }
     }
 }
