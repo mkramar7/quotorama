@@ -10,6 +10,7 @@
 		A8DC149EAF97F1B3F89D9407 /* Pods_Quotorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4EA911B0390A4B4F63B781 /* Pods_Quotorama.framework */; };
 		AD1021E725D5C2FE002B52CD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60666625D5C24C00276A61 /* Quote.swift */; };
 		AD1021F425D5C372002B52CD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */; };
+		AD1D20E025F8E84400C2F01E /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D20DF25F8E84400C2F01E /* TutorialView.swift */; };
 		AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B38625990C19003C96DD /* QuotoramaApp.swift */; };
 		AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38A25990C1A003C96DD /* Assets.xcassets */; };
 		AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FE25991D4500123C34 /* QuotesStore.swift */; };
 		ADB32605259922F600123C34 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD62181259A189F002B5523 /* FavoritesView.swift */; };
+		ADFF0C9C25F8F4E0008528E1 /* swipe_left.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = ADFF0C9725F8F378008528E1 /* swipe_left.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,7 @@
 /* Begin PBXFileReference section */
 		72172D27A941C7CD5E6FE635 /* Pods-Quotorama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotorama.debug.xcconfig"; path = "Target Support Files/Pods-Quotorama/Pods-Quotorama.debug.xcconfig"; sourceTree = "<group>"; };
 		AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
+		AD1D20DF25F8E84400C2F01E /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		AD46B38325990C19003C96DD /* Quotorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46B38625990C19003C96DD /* QuotoramaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaApp.swift; sourceTree = "<group>"; };
 		AD46B38A25990C1A003C96DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 		ADB325FB2599162E00123C34 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADD62181259A189F002B5523 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		ADFF0C9725F8F378008528E1 /* swipe_left.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe_left.mp4; sourceTree = "<group>"; };
 		D567D1347BA9D44F6C90E5D6 /* Pods-Quotorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotorama.release.xcconfig"; path = "Target Support Files/Pods-Quotorama/Pods-Quotorama.release.xcconfig"; sourceTree = "<group>"; };
 		DA4EA911B0390A4B4F63B781 /* Pods_Quotorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quotorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -231,6 +235,7 @@
 				AD46B39625990C30003C96DD /* quotes.json */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
 				AD46B38F25990C1A003C96DD /* Info.plist */,
+				ADFF0C8C25F8F2DC008528E1 /* Resources */,
 				AD46B38C25990C1A003C96DD /* Preview Content */,
 			);
 			path = Quotorama;
@@ -281,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB325FB2599162E00123C34 /* ContentView.swift */,
+				AD1D20DF25F8E84400C2F01E /* TutorialView.swift */,
 				AD6EAAA325F689150044F941 /* ContentView2.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
@@ -321,6 +327,14 @@
 				AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */,
 			);
 			path = "Extensions and utilities";
+			sourceTree = "<group>";
+		};
+		ADFF0C8C25F8F2DC008528E1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADFF0C9725F8F378008528E1 /* swipe_left.mp4 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B00134A0FB3A207114B7BA6D /* Pods */ = {
@@ -460,6 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ADFF0C9C25F8F4E0008528E1 /* swipe_left.mp4 in Resources */,
 				ADB32605259922F600123C34 /* quotes.json in Resources */,
 				AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */,
 				AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */,
@@ -544,6 +559,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
+				AD1D20E025F8E84400C2F01E /* TutorialView.swift in Sources */,
 				AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */,
 				ADB325FC2599162E00123C34 /* ContentView.swift in Sources */,
 				AD67CA8D25DB1593001FF2E4 /* ActionButtonView.swift in Sources */,
@@ -727,6 +743,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Quotorama/Preview Content\"";
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				ENABLE_PREVIEWS = YES;
@@ -740,7 +757,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -761,6 +778,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Quotorama/Preview Content\"";
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				ENABLE_PREVIEWS = YES;
@@ -774,7 +792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -794,10 +812,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				IBSC_MODULE = QuotoramaWatch_Extension;
 				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -815,10 +834,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				IBSC_MODULE = QuotoramaWatch_Extension;
 				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -834,6 +854,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"QuotoramaWatch Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				ENABLE_PREVIEWS = YES;
@@ -843,7 +864,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -859,6 +880,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"QuotoramaWatch Extension/Preview Content\"";
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				ENABLE_PREVIEWS = YES;
@@ -868,7 +890,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -885,6 +907,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				INFOPLIST_FILE = QuotoramaWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -893,7 +916,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.QuotoramaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -908,6 +931,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				INFOPLIST_FILE = QuotoramaWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
@@ -916,7 +940,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.52;
+				MARKETING_VERSION = 1.53;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.QuotoramaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
