@@ -52,7 +52,7 @@ struct ContentView: View {
         }
         .onAppear(perform: {
             QuotoramaUtil.loadGoogleInterstitialAd()
-            if (!tutorialNotShownYet) {
+            if (tutorialNotShownYet) {
                 tutorialViewShown = true
                 tutorialNotShownYet = false
             }

@@ -59,7 +59,7 @@ struct QuoteView: View {
                         quoteShown.toggle()
                         
                         interstitialCounter += 1
-                        if (interstitialCounter == 12) {
+                        if (interstitialCounter == 8) {
                             QuotoramaUtil.showGoogleInterstitialAd()
                             interstitialCounter = 0
                         }

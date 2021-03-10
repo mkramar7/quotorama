@@ -7,7 +7,7 @@
 		<key>Quotorama.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>7</integer>
 		</dict>
 		<key>QuotoramaWatch (Complication).xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,12 +17,30 @@
 		<key>QuotoramaWatch.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>9</integer>
 		</dict>
 		<key>QuotoramaWidgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>8</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>AD46B38225990C19003C96DD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD60663D25D5BBEE00276A61</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AD67CA9725DB194A001FF2E4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

@@ -22,17 +22,18 @@ struct TutorialView: View {
                 .frame(width: 125, height: 125)
             
             Divider()
+                .frame(height: 1)
                 .background(Color.white)
             
             Button("OK") {
                 self.viewShown = false
             }
-            .foregroundColor(.accentColor)
+            .foregroundColor(.white)
             .padding(.bottom, 10)
         }
         .frame(width: 250)
-        .foregroundColor(.black)
-        .background(Color.white)
+        .foregroundColor(.white)
+        .background(Color(red: 51.0/255.0, green: 143.0/255.0, blue: 219.0/255.0))
         .cornerRadius(10)
     }
 }
@@ -42,7 +43,7 @@ struct AVTutorialPlayerView: UIViewControllerRepresentable {
     
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         let playerController = uiViewController as! AVPlayerViewController
-        playerController.view.backgroundColor = UIColor.white
+        playerController.view.backgroundColor = UIColor(red: 51.0/255.0, green: 143.0/255.0, blue: 219.0/255.0, alpha: 1.0)
         playerController.player = player
         playerController.player?.play()
         playerController.showsPlaybackControls = false
@@ -61,5 +62,6 @@ struct AVTutorialPlayerView: UIViewControllerRepresentable {
 struct TutorialView_Previews: PreviewProvider {
     static var previews: some View {
         TutorialView(viewShown: .constant(true))
+            .preferredColorScheme(.dark)
     }
 }
