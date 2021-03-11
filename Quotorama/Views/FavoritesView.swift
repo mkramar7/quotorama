@@ -30,14 +30,15 @@ struct FavoritesView: View {
                         }
                         .padding()
                         .background(Color.gray.opacity(0.30))
-                        .cornerRadius(25)
+                        .cornerRadius(15)
                     }
                     .onDelete(perform: quotesStore.removeFavorites)
                 }
                 .padding(.horizontal, 10)
             }
+            .font(Util.appFont(20))
             .padding(.top, 10)
-            .navigationBarTitle("Favorite quotes")
+            .navigationBarTitle("Favorites")
             .navigationBarItems(trailing: Button("Done") {
                 presentationMode.wrappedValue.dismiss()
             })

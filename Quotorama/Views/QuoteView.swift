@@ -19,16 +19,15 @@ struct QuoteView: View {
             VStack {
                 VStack(alignment: .leading) {
                     Text("„\(currentQuote.text)“")
-                        .italic()
-                        .font(quoteFont(30))
+                        .font(Util.appFont(20))
                         .padding(.bottom, 10)
                         
                     HStack {
                         Spacer()
                         
                         Text(currentQuote.author)
-                            .italic()
-                            .font(quoteFont(25))
+                            .foregroundColor(.secondary)
+                            .font(Util.appFont(15))
                             .padding(.trailing, -5)
                     }
                     .onTapGesture {
@@ -36,8 +35,10 @@ struct QuoteView: View {
                         UIApplication.shared.open(url)
                     }
                 }
+                .padding(.horizontal, 15)
                 .padding([.top, .bottom], 35)
-                .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 35)
+                .background(Color.gray.opacity(0.30))
+                .cornerRadius(10)
                 
                 Image(systemName: quotesStore.isFavorite(currentQuote) ? "heart.fill" : "heart")
                     .font(Font.system(size: 40))
@@ -50,6 +51,7 @@ struct QuoteView: View {
             .transition(AnyTransition.asymmetric(insertion: AnyTransition.move(edge: .trailing), removal: AnyTransition.move(edge: .leading)))
             .animation(.default)
             .padding(.bottom, 50)
+            .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 10)
             .contentShape(Rectangle())
             .gesture(DragGesture().onEnded({ value in
                 if value.translation.width < 0 {
@@ -60,7 +62,7 @@ struct QuoteView: View {
                         
                         interstitialCounter += 1
                         if (interstitialCounter == 8) {
-                            QuotoramaUtil.showGoogleInterstitialAd()
+                            Util.showGoogleInterstitialAd()
                             interstitialCounter = 0
                         }
                     }
@@ -68,16 +70,13 @@ struct QuoteView: View {
             }))
         }
     }
-    
-    func quoteFont(_ size: CGFloat) -> Font {
-        Font.custom("Baskerville", size: size)
-    }
 }
 
 struct QuoteView_Previews: PreviewProvider {
     static var previews: some View {
         QuoteView(currentQuote: .constant(QuotesStore().nextQuote))
             .environmentObject(QuotesStore())
+            .preferredColorScheme(.light)
     }
 }
 

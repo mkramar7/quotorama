@@ -16,10 +16,10 @@ struct ActionButtonView: View {
         Button(action: action) {
             HStack {
                 Image(systemName: icon)
-                    .font(Font.custom("Baskerville", size: 15))
                     .foregroundColor(.white)
                 
                 Text(text)
+                    .font(Util.appFont(15))
                     .foregroundColor(.white)
             }
             .padding(10)

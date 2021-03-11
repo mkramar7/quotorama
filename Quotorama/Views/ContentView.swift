@@ -11,13 +11,9 @@ import GoogleMobileAds
 struct ContentView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     
-    @AppStorage("tutorialNotShownYet") var tutorialNotShownYet = true
-    
     @State var currentQuote: Quote
     @State private var favoritesViewShown = false
     @State private var shareSheetViewShown = false
-    
-    @State private var tutorialViewShown = false
     
     var body: some View {
         ZStack {
@@ -45,17 +41,9 @@ struct ContentView: View {
                 
                 Spacer()
             }
-            
-            if tutorialViewShown {
-                TutorialView(viewShown: $tutorialViewShown)
-            }
         }
         .onAppear(perform: {
-            QuotoramaUtil.loadGoogleInterstitialAd()
-            if (tutorialNotShownYet) {
-                tutorialViewShown = true
-                tutorialNotShownYet = false
-            }
+            Util.loadGoogleInterstitialAd()
         })
 
     }

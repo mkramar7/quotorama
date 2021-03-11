@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 import GoogleMobileAds
 
-class QuotoramaUtil {
+class Util {
     static let SAMPLE_GOOGLE_INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-3940256099942544/4411468910"
     static let REAL_GOOGLE_INTERSTITIAL_AD_UNIT_ID = "ca-app-pub-2246687869317180/5429182192"
     
@@ -30,6 +31,10 @@ class QuotoramaUtil {
 
             interstitialAd = ad
         }
+    }
+    
+    static func appFont(_ size: CGFloat) -> Font {
+        Font.custom("Futura", size: size)
     }
     
 }

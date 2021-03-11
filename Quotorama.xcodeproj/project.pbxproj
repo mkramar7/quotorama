@@ -10,7 +10,6 @@
 		A8DC149EAF97F1B3F89D9407 /* Pods_Quotorama.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA4EA911B0390A4B4F63B781 /* Pods_Quotorama.framework */; };
 		AD1021E725D5C2FE002B52CD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60666625D5C24C00276A61 /* Quote.swift */; };
 		AD1021F425D5C372002B52CD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */; };
-		AD1D20E025F8E84400C2F01E /* TutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1D20DF25F8E84400C2F01E /* TutorialView.swift */; };
 		AD263AB325F93F03007245C2 /* swipe_left.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = AD263AB225F93EDB007245C2 /* swipe_left.mp4 */; };
 		AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B38625990C19003C96DD /* QuotoramaApp.swift */; };
 		AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38A25990C1A003C96DD /* Assets.xcassets */; };
@@ -36,7 +35,7 @@
 		AD67CAB925DB1B3C001FF2E4 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB625DB1B3C001FF2E4 /* Quote.swift */; };
 		AD6EAAA425F689150044F941 /* ContentView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6EAAA325F689150044F941 /* ContentView2.swift */; };
 		AD809E7B259A0475003E4640 /* QuotoramaConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */; };
-		AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */; };
+		AD81DE3225F2964C0019F8A1 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3125F2964C0019F8A1 /* Util.swift */; };
 		AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */; };
 		AD82709E25D5C89600F3B8AA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		AD9130D825ED585000AFF02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60664025D5BBF000276A61 /* Assets.xcassets */; };
@@ -121,7 +120,6 @@
 /* Begin PBXFileReference section */
 		72172D27A941C7CD5E6FE635 /* Pods-Quotorama.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotorama.debug.xcconfig"; path = "Target Support Files/Pods-Quotorama/Pods-Quotorama.debug.xcconfig"; sourceTree = "<group>"; };
 		AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
-		AD1D20DF25F8E84400C2F01E /* TutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialView.swift; sourceTree = "<group>"; };
 		AD263AB225F93EDB007245C2 /* swipe_left.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = swipe_left.mp4; sourceTree = "<group>"; };
 		AD46B38325990C19003C96DD /* Quotorama.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quotorama.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD46B38625990C19003C96DD /* QuotoramaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaApp.swift; sourceTree = "<group>"; };
@@ -154,7 +152,7 @@
 		AD67CAB625DB1B3C001FF2E4 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AD6EAAA325F689150044F941 /* ContentView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView2.swift; sourceTree = "<group>"; };
 		AD809E7A259A0475003E4640 /* QuotoramaConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaConstants.swift; sourceTree = "<group>"; };
-		AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaUtil.swift; sourceTree = "<group>"; };
+		AD81DE3125F2964C0019F8A1 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
 		ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
@@ -286,7 +284,6 @@
 			isa = PBXGroup;
 			children = (
 				ADB325FB2599162E00123C34 /* ContentView.swift */,
-				AD1D20DF25F8E84400C2F01E /* TutorialView.swift */,
 				AD6EAAA325F689150044F941 /* ContentView2.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
@@ -324,7 +321,7 @@
 			children = (
 				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
 				ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */,
-				AD81DE3125F2964C0019F8A1 /* QuotoramaUtil.swift */,
+				AD81DE3125F2964C0019F8A1 /* Util.swift */,
 			);
 			path = "Extensions and utilities";
 			sourceTree = "<group>";
@@ -559,8 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */,
-				AD1D20E025F8E84400C2F01E /* TutorialView.swift in Sources */,
-				AD81DE3225F2964C0019F8A1 /* QuotoramaUtil.swift in Sources */,
+				AD81DE3225F2964C0019F8A1 /* Util.swift in Sources */,
 				ADB325FC2599162E00123C34 /* ContentView.swift in Sources */,
 				AD67CA8D25DB1593001FF2E4 /* ActionButtonView.swift in Sources */,
 				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
