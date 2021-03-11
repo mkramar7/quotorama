@@ -13,29 +13,43 @@ struct FavoritesView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
-                    VStack(alignment: .leading) {
-                        Text(favoriteQuote.text)
-                            .padding(.bottom, 5)
-                        
-                        HStack {
-                            Spacer()
+            ScrollView {
+                LazyVStack {
+                    ForEach(quotesStore.quotes.prefix(10)) { favoriteQuote in
+                        VStack(alignment: .leading) {
+                            Text(favoriteQuote.text)
+                                .padding(.bottom, 5)
                             
-                            Text(favoriteQuote.author)
-                                .foregroundColor(.secondary)
-                                .italic()
+                            HStack {
+                                Spacer()
+                                
+                                Text(favoriteQuote.author)
+                                    .foregroundColor(.secondary)
+                                    .italic()
+                            }
                         }
+                        .padding()
+                        .background(Color.gray.opacity(0.30))
+                        .cornerRadius(25)
                     }
-                    .frame(minHeight: 100)
+                    .onDelete(perform: quotesStore.removeFavorites)
                 }
-                .onDelete(perform: quotesStore.removeFavorites)
+                .padding(.horizontal, 10)
             }
+            .padding(.top, 10)
             .navigationBarTitle("Favorite quotes")
             .navigationBarItems(trailing: Button("Done") {
                 presentationMode.wrappedValue.dismiss()
             })
         }
         .preferredColorScheme(.dark)
+    }
+}
+
+struct Favoritesiew_Previews: PreviewProvider {
+    static var previews: some View {
+        FavoritesView()
+            .environmentObject(QuotesStore())
+            .preferredColorScheme(.dark)
     }
 }
