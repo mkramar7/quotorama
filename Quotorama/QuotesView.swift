@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView2: View {
+struct QuotesView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     
     @State private var favoritesViewShown = false
@@ -18,7 +18,7 @@ struct ContentView2: View {
             HStack {
                 ActionButtonView(text: "Favorites", icon: "hand.thumbsup.fill", action: { favoritesViewShown.toggle() })
                     .padding([.top, .leading], 20)
-                    .sheet(isPresented: $favoritesViewShown) {
+                    .sheet(isPresented: $favoritesViewShown, onDismiss: showAdOnRandom) {
                         FavoritesView().environmentObject(quotesStore)
                     }
                 
@@ -82,14 +82,23 @@ struct ContentView2: View {
             }
         }
         .onAppear {
+            Util.loadGoogleInterstitialAd()
             quotesStore.quotes.shuffle()
+        }
+    }
+    
+    func showAdOnRandom() {
+        if Int.random(in: 1...5) == 1 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                Util.showGoogleInterstitialAd()
+            }
         }
     }
 }
 
 struct ContentView2_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView2()
+        QuotesView()
             .environmentObject(QuotesStore())
             .preferredColorScheme(.dark)
     }

@@ -8,6 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct QuotoramaConstants {
+struct Constants {
     static let wikipediaBaseUrl = "https://en.wikipedia.org/w/index.php?search="
 }

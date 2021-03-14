@@ -38,7 +38,7 @@ class Util {
     }
     
     static func openAuthorWikipediaPage(_ quote: Quote) {
-        guard let url = URL(string: "\(QuotoramaConstants.wikipediaBaseUrl)\(quote.authorNameNormalized)") else { return }
+        guard let url = URL(string: "\(Constants.wikipediaBaseUrl)\(quote.authorNameNormalized)") else { return }
         UIApplication.shared.open(url)
     }
     
