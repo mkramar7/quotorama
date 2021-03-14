@@ -192,6 +192,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD16CD4125FE3EEA0040A7DE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
+				ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AD46B37A25990C19003C96DD = {
 			isa = PBXGroup;
 			children = (
@@ -227,9 +236,8 @@
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
 				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
-				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
-				ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */,
 				AD46B39625990C30003C96DD /* quotes.json */,
+				AD16CD4125FE3EEA0040A7DE /* Extensions */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
 				AD46B38F25990C1A003C96DD /* Info.plist */,
 				AD46B38C25990C1A003C96DD /* Preview Content */,

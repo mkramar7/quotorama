@@ -13,30 +13,29 @@ struct FavoritesView: View {
     
     var body: some View {
         NavigationView {
-            ScrollView {
-                LazyVStack {
-                    ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
-                        VStack(alignment: .leading) {
-                            Text(favoriteQuote.text)
-                                .padding(.bottom, 5)
+            List {
+                ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
+                    VStack(alignment: .leading) {
+                        Text(favoriteQuote.text)
+                            .padding(.bottom, 5)
+                            .font(Util.appFont(17))
+                        
+                        HStack {
+                            Spacer()
                             
-                            HStack {
-                                Spacer()
-                                
-                                Text(favoriteQuote.author)
-                                    .foregroundColor(.secondary)
-                                    .italic()
-                            }
+                            Text(favoriteQuote.author)
+                                .foregroundColor(.secondary)
+                                .italic()
+                                .font(Util.appFont(14))
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.30))
-                        .cornerRadius(15)
                     }
-                    .onDelete(perform: quotesStore.removeFavorites)
+                    .padding()
+                    .background(Color.gray.opacity(0.30))
+                    .cornerRadius(10)
                 }
-                .padding(.horizontal, 10)
+                .onDelete(perform: quotesStore.removeFavorites)
             }
-            .font(Util.appFont(20))
+            .padding(.horizontal, -10)
             .padding(.top, 10)
             .navigationBarTitle("Favorites")
             .navigationBarItems(trailing: Button("Done") {

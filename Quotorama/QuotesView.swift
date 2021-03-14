@@ -75,7 +75,7 @@ struct QuotesView: View {
                             }
                         }
                     }
-                    .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 10)
+                    .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 20)
                 }
                 .frame(width: UIScreen.main.bounds.width)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
@@ -96,7 +96,7 @@ struct QuotesView: View {
     }
 }
 
-struct ContentView2_Previews: PreviewProvider {
+struct QuotesView_Previews: PreviewProvider {
     static var previews: some View {
         QuotesView()
             .environmentObject(QuotesStore())
