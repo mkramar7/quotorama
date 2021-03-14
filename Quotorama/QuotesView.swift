@@ -92,11 +92,11 @@ struct QuotesView: View {
     }
     
     func showAdOnRandom() {
-        //if Int.random(in: 1...5) == 1 {
+        if Int.random(in: 1...5) == 1 {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 Util.showGoogleInterstitialAd()
             }
-        //}
+        }
     }
 }
 
