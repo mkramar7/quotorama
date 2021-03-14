@@ -35,8 +35,9 @@ struct FavoritesView: View {
                 }
                 .onDelete(perform: quotesStore.removeFavorites)
             }
+            .listStyle(SidebarListStyle())
+            .listRowInsets(.init(top: -10, leading: 0, bottom: 0, trailing: 0))
             .padding(.horizontal, -10)
-            .padding(.top, 10)
             .navigationBarTitle("Favorites")
             .navigationBarItems(trailing: Button("Done") {
                 presentationMode.wrappedValue.dismiss()

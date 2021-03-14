@@ -1,5 +1,5 @@
 //
-//  ContentView2.swift
+//  QuotesView.swift
 //  Quotorama
 //
 //  Created by Marko Kramar on 08.03.2021..
@@ -38,6 +38,7 @@ struct QuotesView: View {
                                     Spacer()
                                     
                                     Text(quote.author)
+                                        .italic()
                                         .foregroundColor(.secondary)
                                         .font(Util.appFont(15))
                                         .padding(.trailing, -5)
@@ -80,7 +81,10 @@ struct QuotesView: View {
                 .frame(width: UIScreen.main.bounds.width)
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
+            
+            GoogleAdBannerView()
         }
+        .edgesIgnoringSafeArea(.bottom)
         .onAppear {
             Util.loadGoogleInterstitialAd()
             quotesStore.quotes.shuffle()

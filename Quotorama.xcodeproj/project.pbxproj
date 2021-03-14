@@ -43,6 +43,7 @@
 		ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB325FE25991D4500123C34 /* QuotesStore.swift */; };
 		ADB32605259922F600123C34 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD62181259A189F002B5523 /* FavoritesView.swift */; };
+		ADE8EBAE25FE494D00816021 /* GoogleAdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +154,7 @@
 		ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADD62181259A189F002B5523 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdBannerView.swift; sourceTree = "<group>"; };
 		D567D1347BA9D44F6C90E5D6 /* Pods-Quotorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotorama.release.xcconfig"; path = "Target Support Files/Pods-Quotorama/Pods-Quotorama.release.xcconfig"; sourceTree = "<group>"; };
 		DA4EA911B0390A4B4F63B781 /* Pods_Quotorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quotorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -233,6 +235,7 @@
 				AD809E7A259A0475003E4640 /* Constants.swift */,
 				AD81DE3125F2964C0019F8A1 /* Util.swift */,
 				AD6EAAA325F689150044F941 /* QuotesView.swift */,
+				ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
 				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
@@ -535,6 +538,7 @@
 				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
 				AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */,
 				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
+				ADE8EBAE25FE494D00816021 /* GoogleAdBannerView.swift in Sources */,
 				AD809E7B259A0475003E4640 /* Constants.swift in Sources */,
 				AD6EAAA425F689150044F941 /* QuotesView.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,
