@@ -11,6 +11,10 @@ struct FavoritesView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @Environment(\.presentationMode) var presentationMode
     
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "Futura", size: 30)!]
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -38,10 +42,10 @@ struct FavoritesView: View {
             .listStyle(SidebarListStyle())
             .listRowInsets(.init(top: -10, leading: 0, bottom: 0, trailing: 0))
             .padding(.horizontal, -10)
-            .navigationBarTitle("Favorites")
+            .navigationBarTitle("Favorites", displayMode: .large)
             .navigationBarItems(trailing: Button("Done") {
                 presentationMode.wrappedValue.dismiss()
-            })
+            }.font(Util.appFont(17)))
         }
         .preferredColorScheme(.dark)
     }

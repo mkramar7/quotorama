@@ -54,7 +54,7 @@ struct QuotesView: View {
                             
                             HStack {
                                 Image(systemName: "hand.thumbsup.fill")
-                                    .font(Font.system(size: 40))
+                                    .font(Font.system(size: 35))
                                     .opacity(quotesStore.isFavorite(quote) ? 1 : 0.3)
                                     .onTapGesture {
                                         quotesStore.toggleFavorite(quote)
@@ -67,7 +67,7 @@ struct QuotesView: View {
                                     .padding(.horizontal, 20)
                                 
                                 Image(systemName: "square.and.arrow.up")
-                                    .font(Font.system(size: 40))
+                                    .font(Font.system(size: 35))
                                     .opacity(0.3)
                                     .onTapGesture { shareSheetViewShown.toggle() }
                                     .sheet(isPresented: $shareSheetViewShown) {
