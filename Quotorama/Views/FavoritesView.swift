@@ -15,7 +15,7 @@ struct FavoritesView: View {
         NavigationView {
             ScrollView {
                 LazyVStack {
-                    ForEach(quotesStore.quotes.prefix(10)) { favoriteQuote in
+                    ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
                         VStack(alignment: .leading) {
                             Text(favoriteQuote.text)
                                 .padding(.bottom, 5)

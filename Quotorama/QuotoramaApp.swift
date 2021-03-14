@@ -13,13 +13,13 @@ struct QuotoramaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView(currentQuote: quotesStore.nextQuote)
-                .preferredColorScheme(.dark)
-                .environmentObject(quotesStore)
-
-            /*ContentView2()
+            /*ContentView(currentQuote: quotesStore.nextQuote)
                 .preferredColorScheme(.dark)
                 .environmentObject(quotesStore)*/
+
+            ContentView2()
+                .preferredColorScheme(.dark)
+                .environmentObject(quotesStore)
         }
     }
 }

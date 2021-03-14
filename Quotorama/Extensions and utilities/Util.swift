@@ -37,4 +37,9 @@ class Util {
         Font.custom("Futura", size: size)
     }
     
+    static func openAuthorWikipediaPage(_ quote: Quote) {
+        guard let url = URL(string: "\(QuotoramaConstants.wikipediaBaseUrl)\(quote.authorNameNormalized)") else { return }
+        UIApplication.shared.open(url)
+    }
+    
 }
