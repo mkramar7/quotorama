@@ -19,7 +19,10 @@ private struct GoogleAdBannerRepresentable: UIViewRepresentable {
         let banner = GADBannerView(adSize: kGADAdSizeBanner)
         banner.adUnitID = Constants.GOOGLE_BANNER_AD_UNIT_ID
         banner.rootViewController = UIApplication.shared.windows.first?.rootViewController
-        banner.load(GADRequest())
+        
+        let request = GADRequest()
+        request.scene = UIApplication.shared.windows.first?.windowScene
+        banner.load(request)
         return banner
     }
     
