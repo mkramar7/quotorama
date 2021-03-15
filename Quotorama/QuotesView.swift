@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct QuotesView: View {
+    @EnvironmentObject var store: Store
     @EnvironmentObject var quotesStore: QuotesStore
     
     @State private var favoritesViewShown = false
     @State private var shareSheetViewShown = false
+    @State private var settingsViewShown = false
     
     var body: some View {
         VStack {
@@ -23,6 +25,12 @@ struct QuotesView: View {
                     }
                 
                 Spacer()
+                
+                ActionButtonView(text: "Settings", icon: "gearshape", action: { settingsViewShown.toggle() })
+                    .padding([.top, .trailing], 20)
+                    .sheet(isPresented: $settingsViewShown) {
+                        SettingsView().environmentObject(store)
+                    }
             }
             
             LazyHStack {
@@ -82,19 +90,26 @@ struct QuotesView: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
             
-            GoogleAdBannerView()
+            if !Util.isAdsRemovalPurchased() {
+                GoogleAdBannerView()
+            }
         }
         .edgesIgnoringSafeArea(.bottom)
         .onAppear {
-            Util.loadGoogleInterstitialAd()
+            if !Util.isAdsRemovalPurchased() {
+                Util.loadGoogleInterstitialAd()
+            }
+            
             quotesStore.quotes.shuffle()
         }
     }
     
     func showAdOnRandom() {
-        if Int.random(in: 1...5) == 1 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                Util.showGoogleInterstitialAd()
+        if !Util.isAdsRemovalPurchased() {
+            if Int.random(in: 1...5) == 1 {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    Util.showGoogleInterstitialAd()
+                }
             }
         }
     }
@@ -105,5 +120,16 @@ struct QuotesView_Previews: PreviewProvider {
         QuotesView()
             .environmentObject(QuotesStore())
             .preferredColorScheme(.dark)
+    }
+}
+
+struct DismissSheetButtonView: View {
+    var body: some View {
+        Image(systemName: "chevron.down.circle")
+            .font(Util.appFont(30))
+            .padding(.all, 10)
+            .foregroundColor(Color.white.opacity(0.5))
+            .cornerRadius(10)
+            .padding(.top, 10)
     }
 }

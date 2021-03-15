@@ -9,13 +9,15 @@ import SwiftUI
 
 @main
 struct QuotoramaApp: App {
-    var quotesStore = QuotesStore()
+    private var store = Store()
+    private var quotesStore = QuotesStore()
     
     var body: some Scene {
         WindowGroup {
             QuotesView()
                 .preferredColorScheme(.dark)
                 .environmentObject(quotesStore)
+                .environmentObject(store)
         }
     }
 }

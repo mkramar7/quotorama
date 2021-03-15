@@ -40,4 +40,16 @@ class Util {
         UIApplication.shared.open(url)
     }
     
+    static func isAdsRemovalPurchased() -> Bool {
+        isIapPurchased(iapIdentifier: Constants.REMOVE_ADS_IN_APP_PURCHASE_IDENTIFIER)
+    }
+    
+    static func isIapPurchased(iapIdentifier: String) -> Bool {
+        UserDefaults.standard.bool(forKey: iapIdentifier)
+    }
+    
+    static func markIapAsPurchased(iapIdentifier: String) {
+        UserDefaults.standard.setValue(true, forKey: iapIdentifier)
+    }
+    
 }

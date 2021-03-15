@@ -9,14 +9,16 @@ import SwiftUI
 
 struct ActionButtonView: View {
     var text: String
-    var icon: String
+    var icon: String?
     var action: () -> ()
     
     var body: some View {
         Button(action: action) {
             HStack {
-                Image(systemName: icon)
-                    .foregroundColor(.white)
+                if let icon = icon {
+                    Image(systemName: icon)
+                        .foregroundColor(.white)
+                }
                 
                 Text(text)
                     .font(Util.appFont(15))
