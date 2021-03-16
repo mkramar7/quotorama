@@ -29,3 +29,14 @@ struct ShareSheetView: UIViewControllerRepresentable {
         // nothing to do here
     }
 }
+
+struct DismissSheetButtonView: View {
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: "chevron.down")
+                .font(Util.appFont(25))
+        }
+    }
+}

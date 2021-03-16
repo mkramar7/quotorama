@@ -39,7 +39,7 @@ struct SettingsView: View {
                         }
                     }
                     
-                    Section(header: Text("Support us".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
+                    Section(header: Text("Support me".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
                         HStack {
                             Text("Share Quotorama")
                                 .font(Util.appFont(17))
@@ -60,7 +60,7 @@ struct SettingsView: View {
                         }
                         
                         HStack {
-                            Text("Leave us a Review")
+                            Text("Leave a review")
                                 .font(Util.appFont(17))
                             
                             Spacer()
@@ -82,18 +82,18 @@ struct SettingsView: View {
                 .padding(.horizontal, -10)
                 .listStyle(SidebarListStyle())
                 
-                    Text("\"Art of Silence - by Uniq\" is under a Creative Commons license (Creative Commons – International Recognition 4.0 – CC BY 4.0)")
-                        .multilineTextAlignment(.center)
-                        .font(Util.appFont(11))
-                        .foregroundColor(.secondary)
-                        .padding(.horizontal, 15)
+                Text(Constants.ATTRIBUTION_TEXT)
+                    .multilineTextAlignment(.center)
+                    .font(Util.appFont(11))
+                    .foregroundColor(.secondary)
+                    .padding(.horizontal, 15)
             }
             .navigationBarTitle("Settings")
-            .navigationBarItems(trailing: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                DismissSheetButtonView()
-            })
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    DismissSheetButtonView(action: { presentationMode.wrappedValue.dismiss() })
+                }
+            }
         }
         .preferredColorScheme(.dark)
     }

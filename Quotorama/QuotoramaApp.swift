@@ -14,7 +14,7 @@ struct QuotoramaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            QuotesView()
+            ContentView()
                 .preferredColorScheme(.dark)
                 .environmentObject(quotesStore)
                 .environmentObject(iapHelper)

@@ -43,11 +43,11 @@ struct FavoritesView: View {
             .listRowInsets(.init(top: -10, leading: 0, bottom: 0, trailing: 0))
             .padding(.horizontal, -10)
             .navigationBarTitle("Favorites", displayMode: .large)
-            .navigationBarItems(trailing: Button(action: {
-                presentationMode.wrappedValue.dismiss()
-            }) {
-                DismissSheetButtonView()
-            })
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    DismissSheetButtonView(action: { presentationMode.wrappedValue.dismiss() })
+                }
+            }
         }
         .preferredColorScheme(.dark)
     }
