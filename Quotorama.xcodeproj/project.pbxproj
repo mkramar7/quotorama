@@ -45,8 +45,7 @@
 		ADB32605259922F600123C34 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD62181259A189F002B5523 /* FavoritesView.swift */; };
 		ADDD57A625FFD866009659D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD57A525FFD865009659D9 /* SettingsView.swift */; };
-		ADDD57AD25FFE2A4009659D9 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD57AC25FFE2A4009659D9 /* Store.swift */; };
-		ADDD57B725FFECD0009659D9 /* InAppPurchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD57B625FFECD0009659D9 /* InAppPurchase.swift */; };
+		ADDD57AD25FFE2A4009659D9 /* InAppPurchaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADDD57AC25FFE2A4009659D9 /* InAppPurchaseHelper.swift */; };
 		ADE8EBAE25FE494D00816021 /* GoogleAdBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -160,8 +159,7 @@
 		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADD62181259A189F002B5523 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		ADDD57A525FFD865009659D9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		ADDD57AC25FFE2A4009659D9 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		ADDD57B625FFECD0009659D9 /* InAppPurchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchase.swift; sourceTree = "<group>"; };
+		ADDD57AC25FFE2A4009659D9 /* InAppPurchaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InAppPurchaseHelper.swift; sourceTree = "<group>"; };
 		ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdBannerView.swift; sourceTree = "<group>"; };
 		D567D1347BA9D44F6C90E5D6 /* Pods-Quotorama.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quotorama.release.xcconfig"; path = "Target Support Files/Pods-Quotorama/Pods-Quotorama.release.xcconfig"; sourceTree = "<group>"; };
 		DA4EA911B0390A4B4F63B781 /* Pods_Quotorama.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quotorama.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +201,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AD1669D12600EA4900036EA8 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				AD809E7A259A0475003E4640 /* Constants.swift */,
+				AD81DE3125F2964C0019F8A1 /* Util.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		AD1669D22600EA6000036EA8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD6EAAA325F689150044F941 /* QuotesView.swift */,
+				ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */,
+				ADD62181259A189F002B5523 /* FavoritesView.swift */,
+				ADDD57A525FFD865009659D9 /* SettingsView.swift */,
+				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
+				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		AD16CD4125FE3EEA0040A7DE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,20 +260,13 @@
 			isa = PBXGroup;
 			children = (
 				AD46B38625990C19003C96DD /* QuotoramaApp.swift */,
-				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
-				ADDD57AC25FFE2A4009659D9 /* Store.swift */,
-				ADDD57B625FFECD0009659D9 /* InAppPurchase.swift */,
-				AD809E7A259A0475003E4640 /* Constants.swift */,
-				AD81DE3125F2964C0019F8A1 /* Util.swift */,
-				AD6EAAA325F689150044F941 /* QuotesView.swift */,
-				ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */,
-				ADD62181259A189F002B5523 /* FavoritesView.swift */,
-				ADDD57A525FFD865009659D9 /* SettingsView.swift */,
-				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
-				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
-				AD46B39625990C30003C96DD /* quotes.json */,
+				AD1669D22600EA6000036EA8 /* Views */,
+				AD1669D12600EA4900036EA8 /* Utilities */,
 				AD16CD4125FE3EEA0040A7DE /* Extensions */,
+				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
+				ADDD57AC25FFE2A4009659D9 /* InAppPurchaseHelper.swift */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
+				AD46B39625990C30003C96DD /* quotes.json */,
 				AD46B38F25990C1A003C96DD /* Info.plist */,
 				AD46B38C25990C1A003C96DD /* Preview Content */,
 			);
@@ -552,9 +565,8 @@
 				AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */,
 				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
 				ADE8EBAE25FE494D00816021 /* GoogleAdBannerView.swift in Sources */,
-				ADDD57AD25FFE2A4009659D9 /* Store.swift in Sources */,
+				ADDD57AD25FFE2A4009659D9 /* InAppPurchaseHelper.swift in Sources */,
 				AD809E7B259A0475003E4640 /* Constants.swift in Sources */,
-				ADDD57B725FFECD0009659D9 /* InAppPurchase.swift in Sources */,
 				AD6EAAA425F689150044F941 /* QuotesView.swift in Sources */,
 				ADDD57A625FFD866009659D9 /* SettingsView.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,

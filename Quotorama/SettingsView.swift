@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var iapHelper: InAppPurchaseHelper
     @Environment(\.presentationMode) var presentationMode
     
     init() {
@@ -18,14 +18,9 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(store.allInAppPurchases, id: \.self) { inAppPurchase in
-                    InAppPurchaseRowView(inAppPurchase: inAppPurchase) {
-                        if inAppPurchase.isLocked {
-                            if let product = store.product(for: inAppPurchase.id) {
-                                store.purchaseProduct(product)
-                            }
-                        }
-                    }
+                List(iapHelper.allInAppPurchases, id: \.self) { inAppPurchase in
+                    InAppPurchaseRowView(inAppPurchase: inAppPurchase)
+                        .environmentObject(iapHelper)
                 }
                 .padding(.horizontal, -10)
                 .listStyle(SidebarListStyle())
@@ -47,13 +42,13 @@ struct SettingsView: View {
     }
     
     func restorePurchases() {
-        store.restorePurchases()
+        iapHelper.restorePurchases()
     }
 }
 
 struct InAppPurchaseRowView: View {
     let inAppPurchase: InAppPurchase
-    let action: () -> Void
+    @EnvironmentObject var iapHelper: InAppPurchaseHelper
     
     var body: some View {
         HStack {
@@ -63,7 +58,11 @@ struct InAppPurchaseRowView: View {
             
             if let price = inAppPurchase.price, inAppPurchase.isLocked {
                 ActionButtonView(text: price, icon: "dollarsign.circle") {
-                    action()
+                    if inAppPurchase.isLocked {
+                        if let product = iapHelper.product(for: inAppPurchase.id) {
+                            iapHelper.purchaseProduct(product)
+                        }
+                    }
                 }
                 .background(Color.green.opacity(0.2))
                 .cornerRadius(10)

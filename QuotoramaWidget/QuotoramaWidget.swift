@@ -48,8 +48,7 @@ struct QuotoramaWidgetEntryView: View {
         VStack {
             VStack(alignment: .leading) {
                 Text("„\(entry.quote.text)“")
-                    .italic()
-                    .font(Font.custom("Baskerville", size: 20))
+                    .font(Font.custom("Futura", size: 17))
                     .foregroundColor(.white)
                     .padding(.bottom, 10)
                     .minimumScaleFactor(0.5)
@@ -59,7 +58,7 @@ struct QuotoramaWidgetEntryView: View {
                     
                     Text(entry.quote.author)
                         .italic()
-                        .font(Font.custom("Baskerville", size: 15))
+                        .font(Font.custom("Futura", size: 12))
                         .foregroundColor(.white)
                         .padding(.trailing, -5)
                 }

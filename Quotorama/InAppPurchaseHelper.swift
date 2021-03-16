@@ -10,7 +10,7 @@ import StoreKit
 typealias FetchCompletionHandler = (([SKProduct]) -> Void)
 typealias PurchaseCompletionHandler = ((SKPaymentTransaction?) -> Void)
 
-class Store: NSObject, ObservableObject {
+class InAppPurchaseHelper: NSObject, ObservableObject {
     @Published var allInAppPurchases = [InAppPurchase]()
     
     private let allProductIdentifiers = Set([
@@ -22,10 +22,12 @@ class Store: NSObject, ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
                 for index in self.allInAppPurchases.indices {
-                    self.allInAppPurchases[index].isLocked = !self.completedPurchases.contains(self.allInAppPurchases[index].id)
-                    if !self.allInAppPurchases[index].isLocked {
-                        Util.markIapAsPurchased(iapIdentifier: self.allInAppPurchases[index].id)
+                    if !self.completedPurchases.contains(self.allInAppPurchases[index].id) {
+                        continue
                     }
+                    
+                    self.allInAppPurchases[index].isLocked = false
+                    Util.markIapAsPurchased(iapIdentifier: self.allInAppPurchases[index].id)
                 }
             }
         }
@@ -68,7 +70,7 @@ class Store: NSObject, ObservableObject {
     }
 }
 
-extension Store {
+extension InAppPurchaseHelper {
     func product(for identifier: String) -> SKProduct? {
         fetchedProducts.first(where: { $0.productIdentifier == identifier })
     }
@@ -84,7 +86,7 @@ extension Store {
     }
 }
 
-extension Store: SKPaymentTransactionObserver {
+extension InAppPurchaseHelper: SKPaymentTransactionObserver {
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             var shouldFinishTransactions = false
@@ -112,7 +114,7 @@ extension Store: SKPaymentTransactionObserver {
     }
 }
 
-extension Store: SKProductsRequestDelegate {
+extension InAppPurchaseHelper: SKProductsRequestDelegate {
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         let loadedProducts = response.products
         let invalidProducts = response.invalidProductIdentifiers
@@ -135,6 +137,34 @@ extension Store: SKProductsRequestDelegate {
             self.fetchCompletionHandler?(loadedProducts)
             self.fetchCompletionHandler = nil
             self.productsRequest = nil
+        }
+    }
+}
+
+struct InAppPurchase: Hashable {
+    let id: String
+    let title: String
+    let description: String
+    var isLocked: Bool
+    let locale: Locale
+    var price: String?
+    
+    lazy var formatter: NumberFormatter = {
+        let nf = NumberFormatter()
+        nf.numberStyle = .currency
+        nf.locale = locale
+        return nf
+    }()
+    
+    init(product: SKProduct, isLocked: Bool = true) {
+        self.id = product.productIdentifier
+        self.title = product.localizedTitle
+        self.description = product.localizedDescription
+        self.isLocked = isLocked
+        self.locale = product.priceLocale
+        
+        if isLocked {
+            self.price = formatter.string(from: product.price)
         }
     }
 }

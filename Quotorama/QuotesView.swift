@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuotesView: View {
-    @EnvironmentObject var store: Store
+    @EnvironmentObject var iapHelper: InAppPurchaseHelper
     @EnvironmentObject var quotesStore: QuotesStore
     
     @State private var favoritesViewShown = false
@@ -29,7 +29,7 @@ struct QuotesView: View {
                 ActionButtonView(text: "Settings", icon: "gearshape", action: { settingsViewShown.toggle() })
                     .padding([.top, .trailing], 20)
                     .sheet(isPresented: $settingsViewShown) {
-                        SettingsView().environmentObject(store)
+                        SettingsView().environmentObject(iapHelper)
                     }
             }
             
@@ -94,7 +94,7 @@ struct QuotesView: View {
                 GoogleAdBannerView()
             }
         }
-        .edgesIgnoringSafeArea(.bottom)
+        .edgesIgnoringSafeArea(Util.isAdsRemovalPurchased() ? .init() : .bottom)
         .onAppear {
             if !Util.isAdsRemovalPurchased() {
                 Util.loadGoogleInterstitialAd()
