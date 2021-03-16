@@ -81,6 +81,12 @@ struct SettingsView: View {
                 }
                 .padding(.horizontal, -10)
                 .listStyle(SidebarListStyle())
+                
+                    Text("\"Art of Silence - by Uniq\" is under a Creative Commons license (Creative Commons – International Recognition 4.0 – CC BY 4.0)")
+                        .multilineTextAlignment(.center)
+                        .font(Util.appFont(11))
+                        .foregroundColor(.secondary)
+                        .padding(.horizontal, 15)
             }
             .navigationBarTitle("Settings")
             .navigationBarItems(trailing: Button(action: {

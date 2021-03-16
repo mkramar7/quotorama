@@ -15,6 +15,8 @@ struct QuotesView: View {
     @State private var shareSheetViewShown = false
     @State private var settingsViewShown = false
     
+    @State private var musicIsPlaying = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -90,6 +92,13 @@ struct QuotesView: View {
                 .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             }
             
+            HStack {
+                ActionButtonView(text: musicIsPlaying ? "Stop playing" : "Ambient music", icon: musicIsPlaying ? "play" : "music.note", action: toggleMusic)
+                    .padding([.bottom, .leading], 20)
+                
+                Spacer()
+            }
+            
             if !Util.isAdsRemovalPurchased() {
                 GoogleAdBannerView()
             }
@@ -101,6 +110,16 @@ struct QuotesView: View {
             }
             
             quotesStore.quotes.shuffle()
+        }
+    }
+    
+    func toggleMusic() {
+        if musicIsPlaying {
+            MusicPlayer.shared.stop()
+            musicIsPlaying = false
+        } else {
+            MusicPlayer.shared.play()
+            musicIsPlaying = true
         }
     }
     
