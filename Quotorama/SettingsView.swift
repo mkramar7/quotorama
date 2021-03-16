@@ -11,6 +11,8 @@ struct SettingsView: View {
     @EnvironmentObject var iapHelper: InAppPurchaseHelper
     @Environment(\.presentationMode) var presentationMode
     
+    @State private var shareAppViewShown = false
+    
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "Futura", size: 30)!]
     }
@@ -18,18 +20,67 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                List(iapHelper.allInAppPurchases, id: \.self) { inAppPurchase in
-                    InAppPurchaseRowView(inAppPurchase: inAppPurchase)
-                        .environmentObject(iapHelper)
+                List {
+                    Section(header: Text("Premium Content".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
+                        ForEach(iapHelper.allInAppPurchases, id: \.self) { inAppPurchase in
+                            InAppPurchaseRowView(inAppPurchase: inAppPurchase)
+                                .environmentObject(iapHelper)
+                        }
+                        
+                        HStack {
+                            Spacer()
+                            
+                            ActionButtonView(text: "Restore purchases", icon: "purchased") {
+                                restorePurchases()
+                            }
+                            .font(Util.appFont(30))
+                            
+                            Spacer()
+                        }
+                    }
+                    
+                    Section(header: Text("Support us".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
+                        HStack {
+                            Text("Share Quotorama")
+                                .font(Util.appFont(17))
+                            
+                            Spacer()
+                            
+                            Image(systemName: "square.and.arrow.up")
+                                .font(Util.appFont(25))
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.30))
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            shareAppViewShown.toggle()
+                        }
+                        .sheet(isPresented: $shareAppViewShown) {
+                            ShareSheetView(activityItems: ["Hi! Check this app: https://\(Constants.APP_STORE_APP_URL)"])
+                        }
+                        
+                        HStack {
+                            Text("Leave us a Review")
+                                .font(Util.appFont(17))
+                            
+                            Spacer()
+                            
+                            Image("review")
+                                .resizable()
+                                .frame(width: 30, height: 30)
+                        }
+                        .padding()
+                        .background(Color.gray.opacity(0.30))
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            if let url = URL(string: "itms-apps://\(Constants.APP_STORE_APP_URL)") {
+                                UIApplication.shared.open(url)
+                            }
+                        }
+                    }
                 }
                 .padding(.horizontal, -10)
                 .listStyle(SidebarListStyle())
-                .font(Util.appFont(20))
-                
-                ActionButtonView(text: "Restore purchases", icon: "purchased") {
-                    restorePurchases()
-                }
-                .font(Util.appFont(30))
             }
             .navigationBarTitle("Settings")
             .navigationBarItems(trailing: Button(action: {
@@ -53,6 +104,7 @@ struct InAppPurchaseRowView: View {
     var body: some View {
         HStack {
             Text(inAppPurchase.title)
+                .font(Util.appFont(17))
             
             Spacer()
             
@@ -84,5 +136,6 @@ struct InAppPurchaseRowView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
+            .environmentObject(InAppPurchaseHelper())
     }
 }

@@ -14,4 +14,5 @@ struct Constants {
     static let GOOGLE_BANNER_AD_UNIT_ID = "ca-app-pub-2246687869317180/1873229923"
     
     static let REMOVE_ADS_IN_APP_PURCHASE_IDENTIFIER = "com.markokramar.quotorama.Quotorama.removeAllAds"
+    static let APP_STORE_APP_URL = "apps.apple.com/app/quotorama/id1553081598"
 }
