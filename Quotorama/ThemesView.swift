@@ -22,6 +22,23 @@ struct ThemesView: View {
                 }
                 
                 Spacer()
+                
+                HStack {
+                    ActionButtonView(text: "Apply theme", icon: "checkmark", fontSize: 18) {
+                        
+                    }
+                    .background(Color.green.opacity(0.3))
+                    .cornerRadius(10)
+                    .padding([.bottom, .leading], 20)
+                    
+                    Spacer()
+                    
+                    ActionButtonView(text: "Restore default", icon: "arrow.uturn.backward", fontSize: 18) {
+                        
+                    }
+                    .padding([.bottom, .trailing], 20)
+                }
+
             }
             .padding(.top, 10)
             .navigationBarTitle("Themes")

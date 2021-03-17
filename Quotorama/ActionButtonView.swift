@@ -10,6 +10,7 @@ import SwiftUI
 struct ActionButtonView: View {
     var text: String
     var icon: String?
+    var fontSize: CGFloat?
     var action: () -> ()
     
     var body: some View {
@@ -18,10 +19,11 @@ struct ActionButtonView: View {
                 if let icon = icon {
                     Image(systemName: icon)
                         .foregroundColor(.white)
+                        .font(Util.appFont(fontSize ?? 15))
                 }
                 
                 Text(text)
-                    .font(Util.appFont(15))
+                    .font(Util.appFont(fontSize ?? 15))
                     .foregroundColor(.white)
             }
             .padding(10)
