@@ -37,7 +37,7 @@ struct ThemesView: View {
 
             }
             .padding(.top, 10)
-            .navigationBarTitle("Themes")
+            .navigationBarTitle("Choose theme")
             .toolbar {
                 ToolbarItem(placement: .principal) {
                     DismissSheetButtonView(action: { presentationMode.wrappedValue.dismiss() })
