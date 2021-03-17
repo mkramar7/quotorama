@@ -19,6 +19,7 @@
 		AD46B38B25990C1A003C96DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38A25990C1A003C96DD /* Assets.xcassets */; };
 		AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */; };
 		AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */; };
+		AD5CAE1026022B4C00C43187 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CAE0F26022B4C00C43187 /* ThemesView.swift */; };
 		AD60664825D5BBF100276A61 /* QuotoramaWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD60664D25D5BBF100276A61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60664C25D5BBF100276A61 /* ContentView.swift */; };
 		AD60664F25D5BBF100276A61 /* QuotoramaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */; };
@@ -138,6 +139,7 @@
 		AD46B38F25990C1A003C96DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD46B39625990C30003C96DD /* quotes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = quotes.json; sourceTree = "<group>"; };
 		AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
+		AD5CAE0F26022B4C00C43187 /* ThemesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemesView.swift; sourceTree = "<group>"; };
 		AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotoramaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD60664025D5BBF000276A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD60664225D5BBF000276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				ADE8EBAD25FE494D00816021 /* GoogleAdBannerView.swift */,
 				ADD62181259A189F002B5523 /* FavoritesView.swift */,
 				ADDD57A525FFD865009659D9 /* SettingsView.swift */,
+				AD5CAE0F26022B4C00C43187 /* ThemesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
 				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
 			);
@@ -578,6 +581,7 @@
 				AD81DE3225F2964C0019F8A1 /* Util.swift in Sources */,
 				AD67CA8D25DB1593001FF2E4 /* ActionButtonView.swift in Sources */,
 				ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */,
+				AD5CAE1026022B4C00C43187 /* ThemesView.swift in Sources */,
 				AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */,
 				AD2BF66F260138EA00D20688 /* FooterView.swift in Sources */,
 				ADB325FF25991D4500123C34 /* QuotesStore.swift in Sources */,
