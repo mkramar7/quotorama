@@ -11,6 +11,8 @@ struct ContentView: View {
     @EnvironmentObject var iapHelper: InAppPurchaseHelper
     @EnvironmentObject var quotesStore: QuotesStore
     
+    @AppStorage("appThemeImage") var appThemeImage: String = ""
+    
     var body: some View {
         VStack {
             HeaderView()
@@ -34,6 +36,16 @@ struct ContentView: View {
             
             quotesStore.quotes.shuffle()
         }
+        .background(
+            ZStack {
+                if appThemeImage != "" {
+                    Image(appThemeImage)
+                        .resizable()
+                        .scaledToFill()
+                }
+            }
+            .edgesIgnoringSafeArea(.all)
+        )
     }
 }
 

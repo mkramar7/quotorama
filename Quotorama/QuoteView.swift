@@ -11,6 +11,8 @@ struct QuoteView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @State private var shareSheetViewShown = false
     
+    @AppStorage("appThemeImage") var appThemeImage: String = ""
+    
     var body: some View {
         LazyHStack {
             TabView {
@@ -36,31 +38,36 @@ struct QuoteView: View {
                         }
                         .padding(.horizontal, 15)
                         .padding([.top, .bottom], 35)
-                        .background(Color.gray.opacity(0.30))
+                        .background(appThemeImage == "" ? Color.gray.opacity(0.3) : Color.black.opacity(0.7))
                         .cornerRadius(10)
                         
-                        HStack {
-                            Image(systemName: "hand.thumbsup.fill")
-                                .font(Font.system(size: 35))
-                                .opacity(quotesStore.isFavorite(quote) ? 1 : 0.3)
-                                .onTapGesture {
-                                    quotesStore.toggleFavorite(quote)
-                                }
-                            
-                            Divider()
-                                .background(Color.white)
-                                .opacity(1)
-                                .frame(height: 50)
-                                .padding(.horizontal, 20)
-                            
-                            Image(systemName: "square.and.arrow.up")
-                                .font(Font.system(size: 35))
-                                .opacity(0.3)
-                                .onTapGesture { shareSheetViewShown.toggle() }
-                                .sheet(isPresented: $shareSheetViewShown) {
-                                    ShareSheetView(activityItems: ["„\(quote.text)“ by \(quote.author)"])
-                                }
+                        Group {
+                            HStack {
+                                Image(systemName: "hand.thumbsup.fill")
+                                    .font(Font.system(size: 35))
+                                    .opacity(quotesStore.isFavorite(quote) ? 1 : 0.3)
+                                    .onTapGesture {
+                                        quotesStore.toggleFavorite(quote)
+                                    }
+                                
+                                Divider()
+                                    .background(Color.white)
+                                    .opacity(1)
+                                    .frame(height: 50)
+                                    .padding(.horizontal, 20)
+                                
+                                Image(systemName: "square.and.arrow.up")
+                                    .font(Font.system(size: 35))
+                                    .opacity(0.3)
+                                    .onTapGesture { shareSheetViewShown.toggle() }
+                                    .sheet(isPresented: $shareSheetViewShown) {
+                                        ShareSheetView(activityItems: ["„\(quote.text)“ by \(quote.author)"])
+                                    }
+                            }
                         }
+                        .padding(10)
+                        .background(appThemeImage == "" ? Color.gray.opacity(0) : Color.black.opacity(0.7))
+                        .cornerRadius(15)
                     }
                 }
                 .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 20)

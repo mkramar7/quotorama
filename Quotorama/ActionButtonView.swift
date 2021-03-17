@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ActionButtonView: View {
+    @AppStorage("appThemeImage") var appThemeImage: String = ""
+    
     var text: String
     var icon: String?
     var fontSize: CGFloat?
@@ -27,7 +29,7 @@ struct ActionButtonView: View {
                     .foregroundColor(.white)
             }
             .padding(10)
-            .background(Color.gray.opacity(0.15))
+            .background(appThemeImage == "" ? Color.gray.opacity(0.15) : Color.black.opacity(0.7))
             .cornerRadius(10)
             
         }

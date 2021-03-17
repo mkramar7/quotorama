@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ThemesView: View {
     @Environment(\.presentationMode) var presentationMode
+    @AppStorage("appThemeImage") var appThemeImage: String = ""
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "Futura", size: 30)!]
@@ -24,19 +25,14 @@ struct ThemesView: View {
                 Spacer()
                 
                 HStack {
-                    ActionButtonView(text: "Apply theme", icon: "checkmark", fontSize: 18) {
-                        
-                    }
-                    .background(Color.green.opacity(0.3))
-                    .cornerRadius(10)
-                    .padding([.bottom, .leading], 20)
-                    
                     Spacer()
                     
-                    ActionButtonView(text: "Restore default", icon: "arrow.uturn.backward", fontSize: 18) {
-                        
+                    ActionButtonView(text: "Restore default", icon: "arrow.uturn.backward", fontSize: 15) {
+                        appThemeImage = ""
                     }
-                    .padding([.bottom, .trailing], 20)
+                    .padding(.bottom, 20)
+                    
+                    Spacer()
                 }
 
             }
@@ -53,38 +49,67 @@ struct ThemesView: View {
 }
 
 struct ThemeRowView: View {
+    @AppStorage("appThemeImage") var appThemeImage: String = ""
+    
     let imagesPair: (String, String)
     
     var body: some View {
         HStack {
             Spacer()
             
-            Image(imagesPair.0)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(15)
-                .frame(width: 150)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                        .stroke(Color.white.opacity(0.5))
-                )
+            ThemeImageView(image: imagesPair.0).onTapGesture {
+                appThemeImage = imagesPair.0
+            }
+            .opacity(appThemeImage == imagesPair.0 ? 1 : 0.8)
+            .overlay(
+                Group {
+                    if appThemeImage == imagesPair.0 {
+                        Image(systemName: "checkmark")
+                            .font(Util.appFont(25))
+                            .padding()
+                            .background(Color.black.opacity(0.8))
+                            .cornerRadius(15)
+                    }
+                }
+            )
                 
-            
             Spacer()
             
-            Image(imagesPair.1)
-                .resizable()
-                .scaledToFit()
-                .cornerRadius(10)
-                .frame(width: 150)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                        .stroke(Color.white.opacity(0.5))
-                )
+            ThemeImageView(image: imagesPair.1).onTapGesture {
+                appThemeImage = imagesPair.1
+            }
+            .opacity(appThemeImage == imagesPair.1 ? 1 : 0.8)
+            .overlay(
+                Group {
+                    if appThemeImage == imagesPair.1 {
+                        Image(systemName: "checkmark")
+                            .font(Util.appFont(25))
+                            .padding()
+                            .background(Color.black.opacity(0.7))
+                            .cornerRadius(15)
+                    }
+                }
+            )
                 
             Spacer()
         }
         .padding(.bottom, 20)
+    }
+}
+
+struct ThemeImageView: View {
+    let image: String
+    
+    var body: some View {
+        Image(image)
+            .resizable()
+            .scaledToFit()
+            .cornerRadius(10)
+            .frame(width: 150)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(Color.white.opacity(0.5))
+            )
     }
 }
 
