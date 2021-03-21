@@ -169,23 +169,40 @@ struct SettingsView: View {
             return
         }
         
-        let content = UNMutableNotificationContent()
-        content.title = "Quote of the day"
-        let quote = quotesStore.nextQuote
-        content.body = "\"\(quote.text)\" by \(quote.author)"
+        let content = generateNotificationContent()
+        var dc = DateComponents()
+        dc.hour = Calendar.current.component(.hour, from: reminderTime)
+        dc.minute = Calendar.current.component(.minute, from: reminderTime)
+        dc.second = 0
+        let firstNotificationTrigger = UNCalendarNotificationTrigger(dateMatching: dc, repeats: false)
         
-        var dateComponents = DateComponents()
-        dateComponents.hour = Calendar.current.component(.hour, from: reminderTime)
-        dateComponents.minute = Calendar.current.component(.minute, from: reminderTime)
+        let firstNotificationRequest = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: firstNotificationTrigger)
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-    
-        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request) { error in
+        UNUserNotificationCenter.current().add(firstNotificationRequest) { error in
             if error != nil {
                 print("Couldn't enable notifications...")
             }
         }
+        
+        for _ in 1...50 {
+            dc.second! += 86400
+            print("Notification should be shown at \(dc.hour!):\(dc.minute!):\(dc.second!)")
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dc, repeats: false)
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: generateNotificationContent(), trigger: trigger)
+            UNUserNotificationCenter.current().add(request) { error in
+               if error != nil {
+                   print("Couldn't enable notifications...")
+               }
+           }
+        }
+    }
+    
+    func generateNotificationContent() -> UNMutableNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Quote of the day"
+        let quote = quotesStore.nextQuote
+        content.body = "\"\(quote.text)\" by \(quote.author)"
+        return content
     }
     
     func restorePurchases() {
