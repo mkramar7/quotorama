@@ -10,11 +10,17 @@ import SwiftUI
 struct SettingsView: View {
     @EnvironmentObject var iapHelper: InAppPurchaseHelper
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var quotesStore: QuotesStore
+    
+    @AppStorage("remindersEnabled") var remindersEnabled = false
+    @AppStorage("reminderTime") private var reminderTime = Calendar.current.date(from: Util.dateComponentsForDefaultReminderTime())!
     
     @State private var shareAppViewShown = false
     
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "Futura", size: 30)!]
+        
+        
     }
     
     var body: some View {
@@ -36,6 +42,48 @@ struct SettingsView: View {
                             .font(Util.appFont(30))
                             
                             Spacer()
+                        }
+                    }
+                    
+                    Section(header: Text("Reminders".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
+                        
+                        VStack {
+                            HStack {
+                                Text("Enable reminders")
+                                    .font(Util.appFont(17))
+                                
+                                Spacer()
+                                
+                                Toggle("", isOn: $remindersEnabled)
+                                    .onChange(of: remindersEnabled) { shouldEnableReminders in
+                                        if shouldEnableReminders {
+                                            askForNotifications()
+                                        } else {
+                                            disableNotifications()
+                                        }
+                                    }
+                            }
+                            .padding()
+                            .background(Color.gray.opacity(0.30))
+                            .cornerRadius(10)
+                            
+                            if remindersEnabled {
+                                HStack {
+                                    Text("Show quote of the day at")
+                                        .font(Util.appFont(17))
+                                    
+                                    Spacer()
+                                    
+                                    DatePicker("", selection: $reminderTime, displayedComponents: .hourAndMinute)
+                                        .labelsHidden()
+                                        .onChange(of: reminderTime) { timeValue in
+                                            enableNotifications()
+                                        }
+                                }
+                                .padding()
+                                .background(Color.gray.opacity(0.30))
+                                .cornerRadius(10)
+                            }
                         }
                     }
                     
@@ -98,6 +146,48 @@ struct SettingsView: View {
         .preferredColorScheme(.dark)
     }
     
+    func askForNotifications() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { success, error in
+            if success {
+                enableNotifications()
+            } else {
+                self.remindersEnabled = false
+                disableNotifications()
+            }
+        }
+    }
+    
+    func disableNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
+    
+    func enableNotifications() {
+        print("enabling notifications")
+        guard remindersEnabled else {
+            print("Couldn't enable notifications...")
+            return
+        }
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Quote of the day"
+        let quote = quotesStore.nextQuote
+        content.body = "\"\(quote.text)\" by \(quote.author)"
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = Calendar.current.component(.hour, from: reminderTime)
+        dateComponents.minute = Calendar.current.component(.minute, from: reminderTime)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+    
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request) { error in
+            if error != nil {
+                print("Couldn't enable notifications...")
+            }
+        }
+    }
+    
     func restorePurchases() {
         iapHelper.restorePurchases()
     }
@@ -143,5 +233,6 @@ struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView()
             .environmentObject(InAppPurchaseHelper())
+            .environmentObject(QuotesStore())
     }
 }

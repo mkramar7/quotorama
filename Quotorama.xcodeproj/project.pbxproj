@@ -43,6 +43,7 @@
 		AD81DE3225F2964C0019F8A1 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3125F2964C0019F8A1 /* Util.swift */; };
 		AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */; };
 		AD82709E25D5C89600F3B8AA /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
+		AD858FA426079BB800C5D204 /* Date+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD858FA326079BB800C5D204 /* Date+RawRepresentable.swift */; };
 		AD9130D825ED585000AFF02C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD60664025D5BBF000276A61 /* Assets.xcassets */; };
 		AD9130DD25ED587B00AFF02C /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		ADA7EB7825D5C4FF00CAF87C /* Array+RawRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */; };
@@ -166,6 +167,7 @@
 		AD809E7A259A0475003E4640 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD81DE3125F2964C0019F8A1 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
+		AD858FA326079BB800C5D204 /* Date+RawRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+RawRepresentable.swift"; sourceTree = "<group>"; };
 		ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+RawRepresentable.swift"; sourceTree = "<group>"; };
 		ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		ADB325FE25991D4500123C34 /* QuotesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			children = (
 				AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */,
 				ADA7EB7725D5C4FF00CAF87C /* Array+RawRepresentable.swift */,
+				AD858FA326079BB800C5D204 /* Date+RawRepresentable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -591,6 +594,7 @@
 				AD809E7B259A0475003E4640 /* Constants.swift in Sources */,
 				AD6EAAA425F689150044F941 /* ContentView.swift in Sources */,
 				AD2BF669260138D400D20688 /* HeaderView.swift in Sources */,
+				AD858FA426079BB800C5D204 /* Date+RawRepresentable.swift in Sources */,
 				ADDD57A625FFD866009659D9 /* SettingsView.swift in Sources */,
 				AD46B38725990C19003C96DD /* QuotoramaApp.swift in Sources */,
 				ADD62182259A189F002B5523 /* FavoritesView.swift in Sources */,
@@ -781,7 +785,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -816,7 +820,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"$(inherited)",
@@ -840,7 +844,7 @@
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				IBSC_MODULE = QuotoramaWatch_Extension;
 				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -862,7 +866,7 @@
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				IBSC_MODULE = QuotoramaWatch_Extension;
 				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
@@ -888,7 +892,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -914,7 +918,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
@@ -940,7 +944,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.QuotoramaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -964,7 +968,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.2;
+				MARKETING_VERSION = 2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.QuotoramaWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

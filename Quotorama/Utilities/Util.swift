@@ -52,4 +52,11 @@ class Util {
         UserDefaults.standard.setValue(true, forKey: iapIdentifier)
     }
     
+    static func dateComponentsForDefaultReminderTime() -> DateComponents {
+        var dateComponents = DateComponents()
+        dateComponents.hour = 12
+        dateComponents.minute = 0
+        return dateComponents
+    }
+    
 }

@@ -27,7 +27,7 @@ struct HeaderView: View {
             ActionButtonView(text: "Settings", icon: "gearshape", action: { settingsViewShown.toggle() })
                 .padding([.top, .trailing], 20)
                 .sheet(isPresented: $settingsViewShown) {
-                    SettingsView().environmentObject(iapHelper)
+                    SettingsView().environmentObject(iapHelper).environmentObject(quotesStore)
                 }
         }
     }
