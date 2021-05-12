@@ -9,7 +9,7 @@ import SwiftUI
 
 class QuotesStore: ObservableObject {
     @AppStorage("favoriteQuoteIds") var favoriteQuoteIds: [String]  = []
-    @Published var quotes: [Quote] = Bundle.main.decode("quotes.json")
+    @Published var quotes: [Quote] = (Bundle.main.decode("quotes.json") as [Quote]).shuffled()
     
     var nextQuote: Quote {
         quotes.shuffled().randomElement()!

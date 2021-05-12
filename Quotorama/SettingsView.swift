@@ -45,47 +45,54 @@ struct SettingsView: View {
                         }
                     }
                     
-                    Section(header: Text("Reminders".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
-                        
-                        VStack {
-                            HStack {
-                                Text("Enable reminders")
-                                    .font(Util.appFont(17))
-                                
-                                Spacer()
-                                
-                                Toggle("", isOn: $remindersEnabled)
-                                    .onChange(of: remindersEnabled) { shouldEnableReminders in
-                                        if shouldEnableReminders {
-                                            askForNotifications()
-                                        } else {
-                                            disableNotifications()
-                                        }
-                                    }
-                            }
-                            .padding()
-                            .background(Color.gray.opacity(0.30))
-                            .cornerRadius(10)
-                            
-                            if remindersEnabled {
-                                HStack {
-                                    Text("Show quote of the day at")
-                                        .font(Util.appFont(17))
-                                    
-                                    Spacer()
-                                    
-                                    DatePicker("", selection: $reminderTime, displayedComponents: .hourAndMinute)
-                                        .labelsHidden()
-                                        .onChange(of: reminderTime) { timeValue in
-                                            enableNotifications()
-                                        }
-                                }
-                                .padding()
-                                .background(Color.gray.opacity(0.30))
-                                .cornerRadius(10)
-                            }
-                        }
-                    }
+                    // Disable "Reminders" feature until it's fixed
+                    // The problem is that, currently, notification content is created locally, and this
+                    // is a problem because content can be specified only once (at creating scheduler) so
+                    // the end result is that notification has always the same quote
+                    // This can be fixed by consulting web servie each time the notification should be generated,
+                    // so the service provides different and random quote for each and every notification
+                    //
+//                    Section(header: Text("Reminders".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
+//
+//                        VStack {
+//                            HStack {
+//                                Text("Enable reminders")
+//                                    .font(Util.appFont(17))
+//
+//                                Spacer()
+//
+//                                Toggle("", isOn: $remindersEnabled)
+//                                    .onChange(of: remindersEnabled) { shouldEnableReminders in
+//                                        if shouldEnableReminders {
+//                                            askForNotifications()
+//                                        } else {
+//                                            disableNotifications()
+//                                        }
+//                                    }
+//                            }
+//                            .padding()
+//                            .background(Color.gray.opacity(0.30))
+//                            .cornerRadius(10)
+//
+//                            if remindersEnabled {
+//                                HStack {
+//                                    Text("Show quote of the day at")
+//                                        .font(Util.appFont(17))
+//
+//                                    Spacer()
+//
+//                                    DatePicker("", selection: $reminderTime, displayedComponents: .hourAndMinute)
+//                                        .labelsHidden()
+//                                        .onChange(of: reminderTime) { timeValue in
+//                                            enableNotifications()
+//                                        }
+//                                }
+//                                .padding()
+//                                .background(Color.gray.opacity(0.30))
+//                                .cornerRadius(10)
+//                            }
+//                        }
+//                    }
                     
                     Section(header: Text("Support me".uppercased()).font(Util.appFont(15)).foregroundColor(.white)) {
                         HStack {

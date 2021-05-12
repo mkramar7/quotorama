@@ -33,8 +33,6 @@ struct ContentView: View {
             if !Util.isAdsRemovalPurchased() {
                 Util.loadGoogleInterstitialAd()
             }
-            
-            quotesStore.quotes.shuffle()
         }
         .background(
             ZStack {
