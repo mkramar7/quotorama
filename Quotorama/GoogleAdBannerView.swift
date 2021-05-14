@@ -7,6 +7,7 @@
 
 import SwiftUI
 import GoogleMobileAds
+import AppTrackingTransparency
 
 private struct VisualEffectView: UIViewRepresentable {
     var effect: UIVisualEffect?
@@ -22,7 +23,13 @@ private struct GoogleAdBannerRepresentable: UIViewRepresentable {
         
         let request = GADRequest()
         request.scene = UIApplication.shared.windows.first?.windowScene
-        banner.load(request)
+        
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+            DispatchQueue.main.async {
+                banner.load(request)
+            }
+        })
+        
         return banner
     }
     

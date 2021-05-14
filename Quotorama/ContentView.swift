@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
 
 struct ContentView: View {
     @EnvironmentObject var iapHelper: InAppPurchaseHelper
@@ -31,7 +32,11 @@ struct ContentView: View {
         .edgesIgnoringSafeArea(Util.isAdsRemovalPurchased() ? .init() : .bottom)
         .onAppear {
             if !Util.isAdsRemovalPurchased() {
-                Util.loadGoogleInterstitialAd()
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    DispatchQueue.main.async {
+                        Util.loadGoogleInterstitialAd()
+                    }
+                })
             }
         }
         .background(

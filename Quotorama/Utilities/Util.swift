@@ -19,15 +19,17 @@ class Util {
     static func loadGoogleInterstitialAd() {
         GADMobileAds.sharedInstance().start(completionHandler: nil)
         
-        let request = GADRequest()
-        request.scene = UIApplication.shared.windows.first?.windowScene
-        GADInterstitialAd.load(withAdUnitID: Constants.GOOGLE_INTERSTITIAL_AD_UNIT_ID, request: request) { [self] ad, error in
-            if let error = error {
-              print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-              return
-            }
+        DispatchQueue.main.async {
+            let request = GADRequest()
+            request.scene = UIApplication.shared.windows.first?.windowScene
+            GADInterstitialAd.load(withAdUnitID: Constants.GOOGLE_INTERSTITIAL_AD_UNIT_ID, request: request) { [self] ad, error in
+                if let error = error {
+                  print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                  return
+                }
 
-            interstitialAd = ad
+                interstitialAd = ad
+            }
         }
     }
     
