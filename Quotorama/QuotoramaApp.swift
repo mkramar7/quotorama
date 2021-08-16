@@ -9,7 +9,6 @@ import SwiftUI
 
 @main
 struct QuotoramaApp: App {
-    private var iapHelper = InAppPurchaseHelper()
     private var quotesStore = QuotesStore()
     
     var body: some Scene {
@@ -17,7 +16,6 @@ struct QuotoramaApp: App {
             ContentView()
                 .preferredColorScheme(.dark)
                 .environmentObject(quotesStore)
-                .environmentObject(iapHelper)
         }
     }
 }

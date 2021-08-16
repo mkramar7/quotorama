@@ -8,37 +8,26 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @EnvironmentObject var iapHelper: InAppPurchaseHelper
     @EnvironmentObject var quotesStore: QuotesStore
     
     @State private var favoritesViewShown = false
-    @State private var settingsViewShown = false
+    @State private var aboutViewShown = false
     
     var body: some View {
         HStack {
             ActionButtonView(text: "Favorites", icon: "hand.thumbsup.fill", action: { favoritesViewShown.toggle() })
                 .padding([.top, .leading], 20)
-                .sheet(isPresented: $favoritesViewShown, onDismiss: showAdRandomly) {
+                .sheet(isPresented: $favoritesViewShown) {
                     FavoritesView().environmentObject(quotesStore)
                 }
             
             Spacer()
             
-            ActionButtonView(text: "Settings", icon: "gearshape", action: { settingsViewShown.toggle() })
+            ActionButtonView(text: "About", icon: "info.circle", action: { aboutViewShown.toggle() })
                 .padding([.top, .trailing], 20)
-                .sheet(isPresented: $settingsViewShown) {
-                    SettingsView().environmentObject(iapHelper).environmentObject(quotesStore)
+                .sheet(isPresented: $aboutViewShown) {
+                    AboutView().environmentObject(quotesStore)
                 }
-        }
-    }
-    
-    func showAdRandomly() {
-        if !Util.isAdsRemovalPurchased() {
-            if Int.random(in: 1...5) == 1 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    Util.showGoogleInterstitialAd()
-                }
-            }
         }
     }
 }

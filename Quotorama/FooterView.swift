@@ -15,7 +15,7 @@ struct FooterView: View {
         HStack {
             ActionButtonView(text: "Themes", icon: "paintpalette") { themesViewShown.toggle() }
                 .padding([.bottom, .leading], 20)
-                .sheet(isPresented: $themesViewShown, onDismiss: changeTheme) {
+                .sheet(isPresented: $themesViewShown) {
                     ThemesView()
                 }
             
@@ -24,10 +24,6 @@ struct FooterView: View {
             ActionButtonView(text: musicIsPlaying ? "Stop playing" : "Ambient music", icon: musicIsPlaying ? "stop.fill" : "play.fill", action: toggleMusicPlaying)
                 .padding([.bottom, .trailing], 20)
         }
-    }
-    
-    func changeTheme() {
-        
     }
     
     func toggleMusicPlaying() {
