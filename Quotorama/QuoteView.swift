@@ -33,7 +33,10 @@ struct QuoteView: View {
                                     .padding(.trailing, -5)
                             }
                             .onTapGesture {
-                                Util.openAuthorWikipediaPage(quote)
+                                Util.fetchRandomQuote { randomQuote in
+                                    print(randomQuote)
+                                }
+                                // Util.openAuthorWikipediaPage(quote)
                             }
                         }
                         .padding(.horizontal, 15)
