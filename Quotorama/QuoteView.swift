@@ -32,12 +32,6 @@ struct QuoteView: View {
                                     .font(Util.appFont(15))
                                     .padding(.trailing, -5)
                             }
-                            .onTapGesture {
-                                Util.fetchRandomQuote { randomQuote in
-                                    print(randomQuote)
-                                }
-                                // Util.openAuthorWikipediaPage(quote)
-                            }
                         }
                         .padding(.horizontal, 15)
                         .padding([.top, .bottom], 35)
