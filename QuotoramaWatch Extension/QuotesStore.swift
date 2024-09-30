@@ -14,3 +14,9 @@ class QuotesStore: ObservableObject {
         quotes.shuffled().randomElement()!
     }
 }
+
+struct Quote: Identifiable, Codable {
+    var id: String
+    var author: String
+    var text: String
+}

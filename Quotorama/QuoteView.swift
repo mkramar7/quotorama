@@ -10,19 +10,20 @@ import SwiftUI
 struct QuoteView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @State private var shareSheetViewShown = false
+    @Binding var selectedQuote: String
     
     @AppStorage("appThemeImage") var appThemeImage: String = ""
     
     var body: some View {
         LazyHStack {
-            TabView {
-                ForEach(quotesStore.quotes.prefix(500), id: \.self) { quote in
+            TabView(selection: $selectedQuote) {
+                ForEach(quotesStore.quotes, id: \.self) { quote in
                     VStack {
                         VStack(alignment: .leading) {
                             Text("\(quote.text)")
                                 .font(Util.appFont(20))
                                 .padding(.bottom, 10)
-                                
+                            
                             HStack {
                                 Spacer()
                                 
@@ -66,6 +67,7 @@ struct QuoteView: View {
                         .background(appThemeImage == "" ? Color.gray.opacity(0) : Color.black.opacity(0.7))
                         .cornerRadius(15)
                     }
+                    .tag(quote.id)
                 }
                 .padding(.horizontal, UIDevice.current.userInterfaceIdiom == .pad ? 100 : 20)
             }

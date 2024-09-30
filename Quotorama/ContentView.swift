@@ -11,13 +11,14 @@ import AppTrackingTransparency
 struct ContentView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @AppStorage("appThemeImage") var appThemeImage: String = ""
+    @State private var selectedQuote = ""
     
     var body: some View {
         VStack {
             HeaderView()
                 .environmentObject(quotesStore)
             
-            QuoteView()
+            QuoteView(selectedQuote: $selectedQuote)
                 .environmentObject(quotesStore)
             
             FooterView()
@@ -30,15 +31,13 @@ struct ContentView: View {
                         .scaledToFill()
                 }
             }
-            .edgesIgnoringSafeArea(.all)
+            .ignoresSafeArea(.all)
         )
     }
 }
 
-struct QuotesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-            .environmentObject(QuotesStore())
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+    ContentView()
+        .environmentObject(QuotesStore())
+        .preferredColorScheme(.dark)
 }

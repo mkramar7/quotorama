@@ -52,7 +52,7 @@ struct QuotoramaWidgetEntryView: View {
                     .foregroundColor(.white)
                     .padding(.bottom, 10)
                     .minimumScaleFactor(0.5)
-                    
+                
                 HStack {
                     Spacer()
                     
@@ -63,12 +63,16 @@ struct QuotoramaWidgetEntryView: View {
                         .padding(.trailing, -5)
                 }
             }
-            .animation(.spring())
             .padding(.horizontal, 25)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.black)
+        .containerBackground(Color.black, for: .widget)
     }
+}
+
+#Preview(as: .systemMedium) {
+    QuotoramaWidget()
+} timeline: {
+    SimpleEntry(date: Date(), quote: QuotesStore().nextQuote)
 }
 
 @main

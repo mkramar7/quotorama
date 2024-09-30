@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD1021E725D5C2FE002B52CD /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60666625D5C24C00276A61 /* Quote.swift */; };
 		AD1021F425D5C372002B52CD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */; };
 		AD1669F22601065D00036EA8 /* music.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = AD1669F12601065D00036EA8 /* music.mp3 */; };
 		AD2BF669260138D400D20688 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BF668260138D400D20688 /* HeaderView.swift */; };
@@ -34,7 +33,6 @@
 		AD67CAAF25DB1AAA001FF2E4 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		AD67CAB725DB1B3C001FF2E4 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB425DB1B3C001FF2E4 /* QuotesStore.swift */; };
 		AD67CAB825DB1B3C001FF2E4 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */; };
-		AD67CAB925DB1B3C001FF2E4 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB625DB1B3C001FF2E4 /* Quote.swift */; };
 		AD6EAAA425F689150044F941 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6EAAA325F689150044F941 /* ContentView.swift */; };
 		AD81DE3225F2964C0019F8A1 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3125F2964C0019F8A1 /* Util.swift */; };
 		AD81DE3825F2A1EF0019F8A1 /* ShareSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */; };
@@ -143,7 +141,6 @@
 		AD60665225D5BBF100276A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD60665525D5BBF100276A61 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AD60665725D5BBF100276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD60666625D5C24C00276A61 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Quote.swift; path = "QuotoramaWatch Extension/Quote.swift"; sourceTree = SOURCE_ROOT; };
 		AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButtonView.swift; sourceTree = "<group>"; };
 		AD67CA9825DB194A001FF2E4 /* QuotoramaWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuotoramaWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD67CA9A25DB194A001FF2E4 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -153,7 +150,6 @@
 		AD67CAA325DB194D001FF2E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AD67CAB425DB1B3C001FF2E4 /* QuotesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesStore.swift; sourceTree = "<group>"; };
 		AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Decodable.swift"; sourceTree = "<group>"; };
-		AD67CAB625DB1B3C001FF2E4 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		AD6EAAA325F689150044F941 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD81DE3125F2964C0019F8A1 /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheetView.swift; sourceTree = "<group>"; };
@@ -211,7 +207,6 @@
 				AD5CAE0F26022B4C00C43187 /* ThemesView.swift */,
 				AD81DE3725F2A1EF0019F8A1 /* ShareSheetView.swift */,
 				AD67CA8C25DB1593001FF2E4 /* ActionButtonView.swift */,
-				AD81DE3125F2964C0019F8A1 /* Util.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -256,10 +251,11 @@
 				AD1669D22600EA6000036EA8 /* Views */,
 				AD16CD4125FE3EEA0040A7DE /* Extensions */,
 				ADB325FE25991D4500123C34 /* QuotesStore.swift */,
+				AD81DE3125F2964C0019F8A1 /* Util.swift */,
 				AD46B38A25990C1A003C96DD /* Assets.xcassets */,
 				AD46B39625990C30003C96DD /* quotes.json */,
-				AD46B38F25990C1A003C96DD /* Info.plist */,
 				AD1669F12601065D00036EA8 /* music.mp3 */,
+				AD46B38F25990C1A003C96DD /* Info.plist */,
 				AD46B38C25990C1A003C96DD /* Preview Content */,
 			);
 			path = Quotorama;
@@ -286,7 +282,6 @@
 			isa = PBXGroup;
 			children = (
 				AD60664C25D5BBF100276A61 /* ContentView.swift */,
-				AD60666625D5C24C00276A61 /* Quote.swift */,
 				AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */,
 				ADA7EB8225D5C59000CAF87C /* QuotesStore.swift */,
 				AD1021F325D5C372002B52CD /* Bundle+Decodable.swift */,
@@ -318,7 +313,6 @@
 		AD67CA9E25DB194A001FF2E4 /* QuotoramaWidget */ = {
 			isa = PBXGroup;
 			children = (
-				AD67CAB625DB1B3C001FF2E4 /* Quote.swift */,
 				AD67CAB425DB1B3C001FF2E4 /* QuotesStore.swift */,
 				AD67CA9F25DB194A001FF2E4 /* QuotoramaWidget.swift */,
 				AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */,
@@ -518,7 +512,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD1021E725D5C2FE002B52CD /* Quote.swift in Sources */,
 				AD1021F425D5C372002B52CD /* Bundle+Decodable.swift in Sources */,
 				ADA7EB8325D5C59000CAF87C /* QuotesStore.swift in Sources */,
 				AD60664D25D5BBF100276A61 /* ContentView.swift in Sources */,
@@ -531,7 +524,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD67CAB925DB1B3C001FF2E4 /* Quote.swift in Sources */,
 				AD67CAB725DB1B3C001FF2E4 /* QuotesStore.swift in Sources */,
 				AD67CAB825DB1B3C001FF2E4 /* Bundle+Decodable.swift in Sources */,
 				AD67CAA025DB194A001FF2E4 /* QuotoramaWidget.swift in Sources */,
@@ -691,7 +683,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Quotorama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -725,7 +717,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Quotorama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -761,7 +753,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -783,7 +775,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -809,7 +801,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Debug;
 		};
@@ -835,7 +827,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
 			};
 			name = Release;
 		};
@@ -848,7 +840,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				INFOPLIST_FILE = QuotoramaWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -872,7 +864,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				INFOPLIST_FILE = QuotoramaWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
