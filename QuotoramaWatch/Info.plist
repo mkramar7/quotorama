@@ -31,5 +31,7 @@
 	<true/>
 	<key>WKCompanionAppBundleIdentifier</key>
 	<string>com.markokramar.quotorama.Quotorama</string>
+	<key>WKRunsIndependentlyOfCompanionApp</key>
+	<true/>
 </dict>
 </plist>
