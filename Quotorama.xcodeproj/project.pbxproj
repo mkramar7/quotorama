@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,7 +17,6 @@
 		AD46B38E25990C1A003C96DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD46B38D25990C1A003C96DD /* Preview Assets.xcassets */; };
 		AD46B3A125990CB8003C96DD /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD46B3A025990CB8003C96DD /* Bundle+Decodable.swift */; };
 		AD5CAE1026022B4C00C43187 /* ThemesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5CAE0F26022B4C00C43187 /* ThemesView.swift */; };
-		AD60664825D5BBF100276A61 /* QuotoramaWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD60664D25D5BBF100276A61 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60664C25D5BBF100276A61 /* ContentView.swift */; };
 		AD60664F25D5BBF100276A61 /* QuotoramaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */; };
 		AD60665125D5BBF100276A61 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD60665025D5BBF100276A61 /* ComplicationController.swift */; };
@@ -29,7 +28,7 @@
 		AD67CA9D25DB194A001FF2E4 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD67CA9C25DB194A001FF2E4 /* SwiftUI.framework */; };
 		AD67CAA025DB194A001FF2E4 /* QuotoramaWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CA9F25DB194A001FF2E4 /* QuotoramaWidget.swift */; };
 		AD67CAA225DB194D001FF2E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD67CAA125DB194D001FF2E4 /* Assets.xcassets */; };
-		AD67CAA625DB194D001FF2E4 /* QuotoramaWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD67CA9825DB194A001FF2E4 /* QuotoramaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD67CAA625DB194D001FF2E4 /* QuotoramaWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AD67CA9825DB194A001FF2E4 /* QuotoramaWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD67CAAF25DB1AAA001FF2E4 /* quotes.json in Resources */ = {isa = PBXBuildFile; fileRef = AD46B39625990C30003C96DD /* quotes.json */; };
 		AD67CAB725DB1B3C001FF2E4 /* QuotesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB425DB1B3C001FF2E4 /* QuotesStore.swift */; };
 		AD67CAB825DB1B3C001FF2E4 /* Bundle+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD67CAB525DB1B3C001FF2E4 /* Bundle+Decodable.swift */; };
@@ -49,13 +48,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AD60664925D5BBF100276A61 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AD46B37B25990C19003C96DD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AD60664625D5BBF100276A61;
-			remoteInfo = "QuotoramaWatch Extension";
-		};
 		AD60665825D5BBF100276A61 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AD46B37B25990C19003C96DD /* Project object */;
@@ -84,26 +76,15 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD60665E25D5BBF100276A61 /* Embed App Extensions */ = {
+		AD67CAAA25DB194D001FF2E4 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				AD60664825D5BBF100276A61 /* QuotoramaWatch Extension.appex in Embed App Extensions */,
+				AD67CAA625DB194D001FF2E4 /* QuotoramaWidgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD67CAAA25DB194D001FF2E4 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				AD67CAA625DB194D001FF2E4 /* QuotoramaWidgetExtension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD9130D625ED582B00AFF02C /* CopyFiles */ = {
@@ -134,7 +115,6 @@
 		AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuotoramaWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD60664025D5BBF000276A61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD60664225D5BBF000276A61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "QuotoramaWatch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD60664C25D5BBF100276A61 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AD60664E25D5BBF100276A61 /* QuotoramaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotoramaApp.swift; sourceTree = "<group>"; };
 		AD60665025D5BBF100276A61 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
@@ -170,13 +150,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		AD46B38025990C19003C96DD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AD60664425D5BBF100276A61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -238,7 +211,6 @@
 			children = (
 				AD46B38325990C19003C96DD /* Quotorama.app */,
 				AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */,
-				AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */,
 				AD67CA9825DB194A001FF2E4 /* QuotoramaWidgetExtension.appex */,
 			);
 			name = Products;
@@ -333,7 +305,7 @@
 				AD46B38025990C19003C96DD /* Frameworks */,
 				AD46B38125990C19003C96DD /* Resources */,
 				AD60665B25D5BBF100276A61 /* Embed Watch Content */,
-				AD67CAAA25DB194D001FF2E4 /* Embed App Extensions */,
+				AD67CAAA25DB194D001FF2E4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -350,37 +322,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD60666225D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch" */;
 			buildPhases = (
-				AD60665E25D5BBF100276A61 /* Embed App Extensions */,
 				ACE24B3AEA247A8AC05EA1BF /* Frameworks */,
 				AD9130D625ED582B00AFF02C /* CopyFiles */,
 				AD9130D725ED584800AFF02C /* Resources */,
+				AD60664325D5BBF100276A61 /* Sources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AD60664A25D5BBF100276A61 /* PBXTargetDependency */,
 			);
 			name = QuotoramaWatch;
 			productName = QuotoramaWatch;
 			productReference = AD60663E25D5BBEE00276A61 /* QuotoramaWatch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		AD60664625D5BBF100276A61 /* QuotoramaWatch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AD60666125D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch Extension" */;
-			buildPhases = (
-				AD60664325D5BBF100276A61 /* Sources */,
-				AD60664425D5BBF100276A61 /* Frameworks */,
-				AD60664525D5BBF100276A61 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "QuotoramaWatch Extension";
-			productName = "QuotoramaWatch Extension";
-			productReference = AD60664725D5BBF100276A61 /* QuotoramaWatch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
+			productType = "com.apple.product-type.application";
 		};
 		AD67CA9725DB194A001FF2E4 /* QuotoramaWidgetExtension */ = {
 			isa = PBXNativeTarget;
@@ -405,16 +359,14 @@
 		AD46B37B25990C19003C96DD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1230;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					AD46B38225990C19003C96DD = {
 						CreatedOnToolsVersion = 12.3;
 					};
 					AD60663D25D5BBEE00276A61 = {
-						CreatedOnToolsVersion = 12.4;
-					};
-					AD60664625D5BBF100276A61 = {
 						CreatedOnToolsVersion = 12.4;
 					};
 					AD67CA9725DB194A001FF2E4 = {
@@ -437,7 +389,6 @@
 			targets = (
 				AD46B38225990C19003C96DD /* Quotorama */,
 				AD60663D25D5BBEE00276A61 /* QuotoramaWatch */,
-				AD60664625D5BBF100276A61 /* QuotoramaWatch Extension */,
 				AD67CA9725DB194A001FF2E4 /* QuotoramaWidgetExtension */,
 			);
 		};
@@ -455,16 +406,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AD60664525D5BBF100276A61 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AD82709E25D5C89600F3B8AA /* quotes.json in Resources */,
-				AD60665625D5BBF100276A61 /* Preview Assets.xcassets in Resources */,
-				AD60665325D5BBF100276A61 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		AD67CA9625DB194A001FF2E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,8 +419,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD60665625D5BBF100276A61 /* Preview Assets.xcassets in Resources */,
 				AD9130DD25ED587B00AFF02C /* quotes.json in Resources */,
 				AD9130D825ED585000AFF02C /* Assets.xcassets in Resources */,
+				AD82709E25D5C89600F3B8AA /* quotes.json in Resources */,
+				AD60665325D5BBF100276A61 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,11 +477,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AD60664A25D5BBF100276A61 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AD60664625D5BBF100276A61 /* QuotoramaWatch Extension */;
-			targetProxy = AD60664925D5BBF100276A61 /* PBXContainerItemProxy */;
-		};
 		AD60665925D5BBF100276A61 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = AD60663D25D5BBEE00276A61 /* QuotoramaWatch */;
@@ -555,6 +494,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -588,6 +528,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -616,6 +557,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -649,6 +591,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -670,7 +613,6 @@
 		AD46B39325990C1A003C96DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -683,7 +625,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Quotorama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -704,7 +646,6 @@
 		AD46B39425990C1A003C96DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -717,7 +658,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Quotorama/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -738,14 +679,17 @@
 		AD60665C25D5BBF100276A61 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
-				IBSC_MODULE = QuotoramaWatch_Extension;
 				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -753,21 +697,24 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Debug;
 		};
 		AD60665D25D5BBF100276A61 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
-				IBSC_MODULE = QuotoramaWatch_Extension;
 				INFOPLIST_FILE = QuotoramaWatch/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
 				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -775,59 +722,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Release;
-		};
-		AD60665F25D5BBF100276A61 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuotoramaWatch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = D6Z6GBS4J9;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "QuotoramaWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
-			};
-			name = Debug;
-		};
-		AD60666025D5BBF100276A61 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"QuotoramaWatch Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = D6Z6GBS4J9;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "QuotoramaWatch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 2.7;
-				PRODUCT_BUNDLE_IDENTIFIER = com.markokramar.quotorama.Quotorama.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+				WATCHOS_DEPLOYMENT_TARGET = 10.6;
 			};
 			name = Release;
 		};
@@ -840,7 +735,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				INFOPLIST_FILE = QuotoramaWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -864,7 +759,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = D6Z6GBS4J9;
 				INFOPLIST_FILE = QuotoramaWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -896,15 +791,6 @@
 			buildConfigurations = (
 				AD46B39325990C1A003C96DD /* Debug */,
 				AD46B39425990C1A003C96DD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AD60666125D5BBF100276A61 /* Build configuration list for PBXNativeTarget "QuotoramaWatch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AD60665F25D5BBF100276A61 /* Debug */,
-				AD60666025D5BBF100276A61 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

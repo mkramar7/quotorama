@@ -45,27 +45,29 @@ struct QuotoramaWidgetEntryView: View {
     var entry: Provider.Entry
     
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("„\(entry.quote.text)“")
-                    .font(Font.custom("Futura", size: 17))
-                    .foregroundColor(.white)
-                    .padding(.bottom, 10)
-                    .minimumScaleFactor(0.5)
-                
-                HStack {
-                    Spacer()
-                    
-                    Text(entry.quote.author)
-                        .italic()
-                        .font(Font.custom("Futura", size: 12))
+        Link(destination: URL(string: "widget://quoteid=\(entry.quote.id)")!) {
+            VStack {
+                VStack(alignment: .leading) {
+                    Text("„\(entry.quote.text)“")
+                        .font(Font.custom("Futura", size: 17))
                         .foregroundColor(.white)
-                        .padding(.trailing, -5)
+                        .padding(.bottom, 10)
+                        .minimumScaleFactor(0.5)
+                    
+                    HStack {
+                        Spacer()
+                        
+                        Text(entry.quote.author)
+                            .italic()
+                            .font(Font.custom("Futura", size: 12))
+                            .foregroundColor(.white)
+                            .padding(.trailing, -5)
+                    }
                 }
+                .padding(.horizontal, 25)
             }
-            .padding(.horizontal, 25)
+            .containerBackground(Color.black, for: .widget)
         }
-        .containerBackground(Color.black, for: .widget)
     }
 }
 
@@ -83,7 +85,7 @@ struct QuotoramaWidget: Widget {
         }
         .configurationDisplayName("Quotorama")
         .description("Shows a new inspirational quote every hour of the day.")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([.systemMedium])
     }
 }
 

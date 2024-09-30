@@ -23,6 +23,9 @@ struct ContentView: View {
             
             FooterView()
         }
+        .onOpenURL { url in
+            selectedQuote = url.absoluteString.components(separatedBy: "widget://quoteid=")[1]
+        }
         .background(
             ZStack {
                 if appThemeImage != "" {
