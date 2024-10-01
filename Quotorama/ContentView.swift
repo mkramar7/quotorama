@@ -11,20 +11,20 @@ import AppTrackingTransparency
 struct ContentView: View {
     @EnvironmentObject var quotesStore: QuotesStore
     @AppStorage("appThemeImage") var appThemeImage: String = ""
-    @State private var selectedQuote = ""
+    @State private var selectedQuoteIdFromWidget = ""
     
     var body: some View {
         VStack {
             HeaderView()
                 .environmentObject(quotesStore)
             
-            QuoteView(selectedQuote: $selectedQuote)
+            QuoteView(selectedQuoteIdFromWidget: $selectedQuoteIdFromWidget)
                 .environmentObject(quotesStore)
             
             FooterView()
         }
         .onOpenURL { url in
-            selectedQuote = url.absoluteString.components(separatedBy: "widget://quoteid=")[1]
+            selectedQuoteIdFromWidget = url.absoluteString.components(separatedBy: "widget://quoteid=")[1]
         }
         .background(
             ZStack {
