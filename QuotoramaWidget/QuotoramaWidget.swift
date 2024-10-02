@@ -64,8 +64,8 @@ struct QuotoramaWidgetEntryView: View {
                             .padding(.trailing, -5)
                     }
                 }
-                .padding(.horizontal, 25)
             }
+            .padding(.horizontal, 10)
             .containerBackground(Color.black, for: .widget)
         }
     }

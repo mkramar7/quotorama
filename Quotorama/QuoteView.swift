@@ -9,15 +9,14 @@ import SwiftUI
 
 struct QuoteView: View {
     @EnvironmentObject var quotesStore: QuotesStore
-    @State private var shareSheetViewShown = false
-    @Binding var selectedQuote: String
-    
     @AppStorage("appThemeImage") var appThemeImage: String = ""
+    
+    @Binding var selectedQuoteIdFromWidget: String
     
     var body: some View {
         LazyHStack {
-            TabView(selection: $selectedQuote) {
-                ForEach(quotesStore.quotes, id: \.self) { quote in
+            TabView(selection: $selectedQuoteIdFromWidget) {
+                ForEach(quotesStore.quotes) { quote in
                     VStack {
                         VStack(alignment: .leading) {
                             Text("\(quote.text)")
@@ -54,13 +53,12 @@ struct QuoteView: View {
                                     .frame(height: 50)
                                     .padding(.horizontal, 20)
                                 
-                                Image(systemName: "square.and.arrow.up")
-                                    .font(Font.system(size: 35))
-                                    .opacity(0.3)
-                                    .onTapGesture { shareSheetViewShown.toggle() }
-                                    .sheet(isPresented: $shareSheetViewShown) {
-                                        ShareSheetView(activityItems: ["„\(quote.text)“ by \(quote.author)"])
-                                    }
+                                ShareLink(item: "„\(quote.text)“ by \(quote.author)") {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .foregroundStyle(.white)
+                                        .font(Font.system(size: 35))
+                                        .opacity(0.3)
+                                }
                             }
                         }
                         .padding(10)
