@@ -9,11 +9,12 @@ import SwiftUI
 
 struct DismissSheetButtonView: View {
     var action: () -> Void
-    
+
     var body: some View {
         Button(action: action) {
             Image(systemName: "chevron.down")
                 .font(Util.appFont(25))
         }
+        .accessibilityLabel("Dismiss")
     }
 }

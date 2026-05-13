@@ -8,30 +8,26 @@
 import SwiftUI
 
 struct ThemesView: View {
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.dismiss) var dismiss
     @AppStorage("appThemeImage") var appThemeImage: String = ""
-    
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "Futura", size: 30)!]
-    }
-    
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 ForEach(Util.THEMES, id: \.0) { themePair in
                     ThemeRowView(imagesPair: (themePair.0, themePair.1))
                 }
-                
+
                 Spacer()
-                
+
                 HStack {
                     Spacer()
-                    
+
                     ActionButtonView(text: "Restore default", icon: "arrow.uturn.backward", fontSize: 15) {
                         appThemeImage = ""
                     }
                     .padding(.bottom, 20)
-                    
+
                     Spacer()
                 }
 
@@ -40,7 +36,7 @@ struct ThemesView: View {
             .navigationBarTitle("Choose theme")
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    DismissSheetButtonView(action: { presentationMode.wrappedValue.dismiss() })
+                    DismissSheetButtonView { dismiss() }
                 }
             }
         }
@@ -50,13 +46,13 @@ struct ThemesView: View {
 
 struct ThemeRowView: View {
     @AppStorage("appThemeImage") var appThemeImage: String = ""
-    
+
     let imagesPair: (String, String)
-    
+
     var body: some View {
         HStack {
             Spacer()
-            
+
             ThemeImageView(image: imagesPair.0).onTapGesture {
                 appThemeImage = imagesPair.0
             }
@@ -72,9 +68,13 @@ struct ThemeRowView: View {
                     }
                 }
             )
-                
+            .accessibilityElement(children: .ignore)
+            .accessibilityAddTraits(.isButton)
+            .accessibilityLabel("\(prettyName(imagesPair.0)) theme")
+            .accessibilityValue(appThemeImage == imagesPair.0 ? "Selected" : "")
+
             Spacer()
-            
+
             ThemeImageView(image: imagesPair.1).onTapGesture {
                 appThemeImage = imagesPair.1
             }
@@ -90,16 +90,24 @@ struct ThemeRowView: View {
                     }
                 }
             )
-                
+            .accessibilityElement(children: .ignore)
+            .accessibilityAddTraits(.isButton)
+            .accessibilityLabel("\(prettyName(imagesPair.1)) theme")
+            .accessibilityValue(appThemeImage == imagesPair.1 ? "Selected" : "")
+
             Spacer()
         }
         .padding(.bottom, 20)
+    }
+
+    private func prettyName(_ image: String) -> String {
+        image.replacingOccurrences(of: "_", with: " ").capitalized
     }
 }
 
 struct ThemeImageView: View {
     let image: String
-    
+
     var body: some View {
         Image(image)
             .resizable()
@@ -113,8 +121,6 @@ struct ThemeImageView: View {
     }
 }
 
-struct ThemesView_Previews: PreviewProvider {
-    static var previews: some View {
-        ThemesView()
-    }
+#Preview {
+    ThemesView()
 }

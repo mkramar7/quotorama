@@ -8,25 +8,23 @@
 import SwiftUI
 
 struct HeaderView: View {
-    @EnvironmentObject var quotesStore: QuotesStore
-    
     @State private var favoritesViewShown = false
     @State private var aboutViewShown = false
-    
+
     var body: some View {
         HStack {
-            ActionButtonView(text: "Favorites", icon: "hand.thumbsup.fill", action: { favoritesViewShown.toggle() })
+            ActionButtonView(text: "Favorites", icon: "hand.thumbsup.fill") { favoritesViewShown.toggle() }
                 .padding([.top, .leading], 20)
                 .sheet(isPresented: $favoritesViewShown) {
-                    FavoritesView().environmentObject(quotesStore)
+                    FavoritesView()
                 }
-            
+
             Spacer()
-            
-            ActionButtonView(text: "About", icon: "info.circle", action: { aboutViewShown.toggle() })
+
+            ActionButtonView(text: "About", icon: "info.circle") { aboutViewShown.toggle() }
                 .padding([.top, .trailing], 20)
                 .sheet(isPresented: $aboutViewShown) {
-                    AboutView().environmentObject(quotesStore)
+                    AboutView()
                 }
         }
     }
