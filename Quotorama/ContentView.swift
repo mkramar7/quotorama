@@ -6,21 +6,17 @@
 //
 
 import SwiftUI
-import AppTrackingTransparency
 
 struct ContentView: View {
-    @EnvironmentObject var quotesStore: QuotesStore
     @AppStorage("appThemeImage") var appThemeImage: String = ""
     @State private var selectedQuoteIdFromWidget = ""
-    
+
     var body: some View {
         VStack {
             HeaderView()
-                .environmentObject(quotesStore)
-            
+
             QuoteView(selectedQuoteIdFromWidget: $selectedQuoteIdFromWidget)
-                .environmentObject(quotesStore)
-            
+
             FooterView()
         }
         .onOpenURL { url in
@@ -41,6 +37,6 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .environmentObject(QuotesStore())
+        .environment(QuotesStore())
         .preferredColorScheme(.dark)
 }

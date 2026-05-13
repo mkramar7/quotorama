@@ -8,25 +8,21 @@
 import SwiftUI
 
 struct FavoritesView: View {
-    @EnvironmentObject var quotesStore: QuotesStore
-    @Environment(\.presentationMode) var presentationMode
-    
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.font: UIFont(name: "Futura", size: 30)!]
-    }
-    
+    @Environment(QuotesStore.self) var quotesStore
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(quotesStore.favoriteQuotes) { favoriteQuote in
                     VStack(alignment: .leading) {
                         Text(favoriteQuote.text)
                             .padding(.bottom, 5)
                             .font(Util.appFont(17))
-                        
+
                         HStack {
                             Spacer()
-                            
+
                             Text(favoriteQuote.author)
                                 .foregroundColor(.secondary)
                                 .italic()
@@ -45,7 +41,7 @@ struct FavoritesView: View {
             .navigationBarTitle("Favorites", displayMode: .large)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    DismissSheetButtonView(action: { presentationMode.wrappedValue.dismiss() })
+                    DismissSheetButtonView { dismiss() }
                 }
             }
         }
@@ -53,10 +49,8 @@ struct FavoritesView: View {
     }
 }
 
-struct Favoritesiew_Previews: PreviewProvider {
-    static var previews: some View {
-        FavoritesView()
-            .environmentObject(QuotesStore())
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+    FavoritesView()
+        .environment(QuotesStore())
+        .preferredColorScheme(.dark)
 }
